@@ -1,0 +1,65 @@
+.visuallyimpaired-block {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    max-width: 1008px;
+    margin: 0 auto;
+    margin-top: 122px;
+}
+
+.visuallyimpaired-block-btn {
+    width: 1008px;
+    height: 199px;
+    border: 8px solid #000000;
+    box-sizing: border-box;
+    border-radius: 50px;
+    display: flex;
+    font-family: Montserrat;
+    font-style: normal;
+    font-weight: 800;
+    font-size: 73.3031px;
+    line-height: 89px;
+    color: #000000;
+    align-items: center;
+    justify-content: center;
+}
+
+.visuallyimpaired-block-spantitle {
+    font-family: Montserrat;
+    font-style: normal;
+    font-weight: 600;
+    font-size: 62px;
+    line-height: 76px;
+    color: #000000;
+    text-align: left;
+    margin-top: 108px;
+}
+
+.visuallyimpaired-block-spanText {
+    font-family: Montserrat;
+    font-style: normal;
+    font-weight: 600;
+    font-size: 62px;
+    line-height: 76px;
+    text-align: left;
+    color: #000000;
+}
+
+span.visuallyimpaired-block-spanText:nth-child(3) {
+    text-align: left;
+    margin-top: 102px;
+    display: flex;
+    flex-direction: column;
+}
+
+.visuallyimpaired-block-subSpanText {
+    margin-top: 50px;
+}
+
+span.visuallyimpaired-block-spanText:nth-child(4) {
+    margin-top: 90px;
+}
+.visuallyimpaired-block-btn {
+    cursor: pointer;
+    justify-content: space-evenly;
+}

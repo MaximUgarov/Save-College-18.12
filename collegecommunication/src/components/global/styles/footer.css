@@ -1,0 +1,52 @@
+@import url('https://fonts.googleapis.com/css2?family=Montserrat:ital,wght@0,100;0,200;0,300;0,400;0,500;0,600;0,700;0,800;0,900;1,100;1,200;1,300;1,400;1,500;1,600;1,700;1,800;1,900&display=swap');
+
+
+.footer-wrapper {
+    background-color: #2C2C2C;
+    height: 300px;
+    display: flex;
+    justify-content: space-between;
+    padding-left: 117px;
+    padding-right: 104px;
+}
+
+.footer-info-grid {
+    display: grid;
+    grid-template-columns: 1fr 1fr;
+    grid-template-rows: 1fr;
+    gap: 0px 128px;
+}
+
+.footer-info-block {
+    display: flex;
+    flex-direction: column;
+    text-align: left;
+    justify-content: center;
+}
+
+.footer-info__title {
+    font-family: Montserrat;
+    font-style: normal;
+    font-weight: bold;
+    font-size: 20.5714px;
+    line-height: 25px;
+    color: #FFFFFF;
+}
+
+.footer-info__text {
+    font-family: Montserrat;
+    font-style: normal;
+    font-weight: 500;
+    font-size: 15.57px;
+    line-height: 19px;
+    color: #FFFFFF;
+    margin-bottom: 16px;
+}
+
+.footer-links-block {
+    display: flex;
+    align-items: center;
+}
+.College {
+    margin-right: 58px;
+}

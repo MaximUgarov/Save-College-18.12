@@ -1,0 +1,4 @@
+.documents-wrapper{
+    display: flex;
+    flex-direction: column;
+    text-align: left;}

@@ -1,0 +1,61 @@
+@import url('https://fonts.googleapis.com/css2?family=Montserrat:ital,wght@0,100;0,200;0,300;0,400;0,500;0,600;0,700;0,800;0,900;1,100;1,200;1,300;1,400;1,500;1,600;1,700;1,800;1,900&display=swap');
+
+* {
+    list-style-type: none;
+    box-sizing: border-box;
+}
+
+
+.navbar-wrapper {
+    padding-left: 155px;
+    margin-right: 61px;
+    width: 100%;
+    padding-top: 44px;
+}
+
+.navbar-info-block-wrapper {
+    display: flex;
+    justify-content: space-between;
+}
+
+.navbar-info-block__btns {
+    display: flex;
+    align-items: center;
+}
+
+.covidBtn,
+.pathersBtn,
+.booksBtn,
+.accountBtn {
+    margin-right: 44px;
+}
+
+.covidBtn,
+.pathersBtn,
+.booksBtn,
+.accountBtn,
+.invalidBtn {
+    cursor: pointer;
+}
+
+
+.navbar__links {
+    font-family: Montserrat;
+    font-style: normal;
+    font-weight: 500;
+    font-size: 15.4286px;
+    line-height: 19px;
+    color: #000000;
+    margin-right: 76px;
+    margin-right: 44px;
+    cursor: pointer;
+}
+
+.navbar__links:hover {
+    color: #102CFC;
+}
+
+.navbar-links-wrapper {
+    display: flex;
+    padding: 0;
+}
