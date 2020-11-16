@@ -24,6 +24,7 @@ import EducationStandartPage from './components/pages/educationStandartPage.jsx/
 import TeachingstaffPage from './components/pages/teachingstaffPage/teachingstaffPage';
 import test from '../src/components/test/akkredit.pdf'
 import Test from './components/pages/testPage/test';
+import MainPageNewsPage from './components/pages/MainPage/MainPageNewsPage';
 
 
 class App extends Component {
@@ -229,6 +230,7 @@ class App extends Component {
               <Route path='/fgs' component={EducationStandartPage} />
               <Route path='/RPS' component={TeachingstaffPage} />
               <Route path='/test' component={Test} />
+              <Route path='/' component={MainPageNewsPage} />
             </Switch>
           </div>
           <Footer></Footer>

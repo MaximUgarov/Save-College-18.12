@@ -1,38 +1,32 @@
-import React from 'react'
+import React, { Fragment, useEffect, useState }from 'react'
+import axios from 'axios'
+import { Link } from "react-router-dom"
 
 const SubMainPageNewsArr = () => {
 
-    const newsArr = [{
-        important: true,
-        title: 'Набор 2020',
-        descr: 'График работы приемной комисии: понедельник - пятница с 9:00 до 15:00 Контактные данные приемной комисии 75-89-02, 8(921)684-08-08, intro@vksit.ru',
-    },{
-        important: true,
-        title: 'Набор 202022',
-        descr: 'График работы приемной комисии: понедельник - пятница с 9:00 до 15:00 Контактные данные приемной комисии 75-89-02, 8(921)684-08-08, intro@vksit.ru',
-    }, {
-        important: false,
-        title: 'Начало учёбы',
-        descr: 'График работы приемной комисии: понедельник - пятница с 9:00 до 15:00 Контактные данные приемной комисии 75-89-02, 8(921)684-08-08, intro@vksit.ru',
-    }, {
-        important: false,
-        title: 'Начало учёбы',
-        descr: 'График работы приемной комисии: понедельник - пятница с 9:00 до 15:00 Контактные данные приемной комисии 75-89-02, 8(921)684-08-08, intro@vksit.ru',
-    }, {
-        important: false,
-        title: 'Начало учёбы',
-        descr: 'График работы приемной комисии: понедельник - пятница с 9:00 до 15:00 Контактные данные приемной комисии 75-89-02, 8(921)684-08-08, intro@vksit.ru',
-    },]
+  
+
+    const [NewsArr, setNewsArr] = useState([]);
+
+    useEffect(() => {
+        axios.get('http://localhost:8000/wp-json/wp/v2/main_page_news')
+            .then(res => {
+                const arr = res.data
+                setNewsArr(arr)
+                console.log(NewsArr)
+            })
+            .catch(err => console.log(err))
+    }, [setNewsArr])
 
     return (
 
-        newsArr.map((item) => <div className={item.important ? "card-main main" : "card-main"} >
-            <div className={item.important ? "card-main-wrapper main" : "card-main-wrapper"}>
-                <div className={item.important ? "card-main-text-wrapper main" : "card-main-text-wrapper"}>
-                    <h3 className={item.important ? "card-main__title main" : "card-main__title"}>{item.title}</h3>
-                    <span className={item.important ? "card-main__text main" : "card-main__text"}>{item.descr}</span>
+        NewsArr.map((NewsArr) => <div className={NewsArr.acf.important_news ? "card-main main" : "card-main"} >
+            <div className={NewsArr.acf.important_news ? "card-main-wrapper main" : "card-main-wrapper"}>
+                <div className={NewsArr.acf.important_news ? "card-main-text-wrapper main" : "card-main-text-wrapper"}>
+                    <h3 className={NewsArr.acf.important_news ? "card-main__title main" : "card-main__title"}>{NewsArr.title.rendered}</h3>
+                    <span className={NewsArr.acf.important_news ? "card-main__text main" : "card-main__text"} dangerouslySetInnerHTML={{ __html: NewsArr.content.rendered }}></span>
                 </div>
-                <button className={item.important ? "card-main__btn main" : "card-main__btn"}>Подробнее...</button>
+                <Link to={NewsArr.id}><button className={NewsArr.acf.important_news ? "card-main__btn main" : "card-main__btn"}>Подробнее...</button></Link>
             </div></div >)
 
     )

@@ -71,3 +71,12 @@ margin-top: 30px;
     justify-content: space-between;
    }
    
+   div.resources-block > span > p:nth-child(1) > a {
+    margin-bottom: 22px;
+   }
+   div.resources-block > span > p {
+    height: auto;
+    display: flex;
+    flex-direction: column;
+   }
+   

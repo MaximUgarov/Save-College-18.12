@@ -9,11 +9,15 @@ export class Test extends Component {
 
     componentDidMount() {
         axios.get('http://localhost:8000/wp-json/wp/v2/test')
-        .then(res => this.setState({
-            test: res.data,
-            isLoaded: true
-        }))
-        .catch(err => console.log(err))
+            .then(res => this.setState({
+                test: res.data,
+                isLoaded: true
+            }))
+            .catch(err => console.log(err))
+    }
+
+    splitDescription(content) {
+        return content.split('/n')
     }
 
 
@@ -24,12 +28,18 @@ export class Test extends Component {
         console.log(this.state)
 
         return (
-        <div>
-               { test.map((test) => <h1>{test.title.rendered}</h1>)}
-                </div>
+            <div>
+                { test.map((test) => <div><h1 className="title-main">{test.title.rendered}</h1>
+                    <div className="content-container-teamplatesPages">
+                        <div className="text-block-wrapper">
+                            <span className="text-block-contentText" dangerouslySetInnerHTML={{ __html: test.content.rendered }} />
+                        </div>
+                    </div>
+                </div>)}
+            </div>
         )
-    
-}
+
+    }
 
 }
 

@@ -1,4 +1,5 @@
 import React, { Component, Fragment } from 'react'
+import axios from 'axios'
 import '../global/styles/mainPage.css'
 
 
@@ -17,36 +18,25 @@ import MainPageNews from './subPagesComponents/mainPageNews';
 
 
 export class MainPage extends Component {
-
-
     state = {
-        items: [
-            {
-                img: slideImg1,
-                title: 'Как к нам попасть?',
-                descr: 'Для поступления на обучение абитуриент подает заявление о приеме с приложением необходимых документов через электронную почту приемной комиссии intro@vksit.ru'
-            }, {
-                img: slideImg1,
-                title: 'Как к нам попасть?',
-                descr: 'Для поступления на обучение абитуриент подает заявление о приеме с приложением необходимых документов через электронную почту приемной комиссии intro@vksit.ru'
-            }, {
-                img: slideImg1,
-                title: 'Как к нам попасть?',
-                descr: 'Для поступления на обучение абитуриент подает заявление о приеме с приложением необходимых документов через электронную почту приемной комиссии intro@vksit.ru'
-            }, {
-                img: slideImg1,
-                title: 'Как к нам попасть?',
-                descr: 'Для поступления на обучение абитуриент подает заявление о приеме с приложением необходимых документов через электронную почту приемной комиссии intro@vksit.ru'
-            }, {
-                img: slideImg1,
-                title: 'Как к нам попасть?',
-                descr: 'Для поступления на обучение абитуриент подает заявление о приеме с приложением необходимых документов через электронную почту приемной комиссии intro@vksit.ru'
-            },
-        ]
+        slideItems: [],
+        isLoaded: false
     }
 
+    componentDidMount() {
+        axios.get('http://localhost:8000/wp-json/wp/v2/main_page')
+            .then(res => this.setState({
+                slideItems: res.data,
+                isLoaded: true
+            }))
+            .catch(err => console.log(err))
+    }
+
+
+
     render() {
-        const { items } = this.state
+        const { slideItems, isLoaded }  = this.state
+        console.log(slideItems)
         const settings = {
             centerMode: true,
             centerPadding: 400,
@@ -54,18 +44,18 @@ export class MainPage extends Component {
         };
 
 
-        return (
+        return isLoaded ? (
             <Fragment>
                 <div className="slider-block">
                     <div className="slider-block-wrapper">
                         <Slider {...settings}>
-                            {items.map(item => <div className="slide" key={item.title}>
+                            {slideItems.map((slideItems) => <div className="slide" >
                                 <div className="slide-container">
-                                    <img src={item.img} alt="" className="slide_img" />
+                                    <img src={slideItems.acf.add_photo} alt="" className="slide_img" />
                                     <div className="slide-text">
                                         <div className="slide-text-wrapper">
-                                            <h2 className="slide-text__title">{item.title}</h2>
-                                            <span className="slide-text__text">{item.descr}</span>
+                                            <h2 className="slide-text__title">{slideItems.title.rendered}</h2>
+                                            <span className="slide-text__text" dangerouslySetInnerHTML={{ __html: slideItems.content.rendered }} />
                                             <button className="slide-text__btn">Подробнее...</button>
                                         </div>
                                     </div>
@@ -76,7 +66,7 @@ export class MainPage extends Component {
                 </div>
                 <div className="news-block"><MainPageNews></MainPageNews></div>
             </Fragment>
-        )
+        ) : <p>empty</p>
     }
 }
 

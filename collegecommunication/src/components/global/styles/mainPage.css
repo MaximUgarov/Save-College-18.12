@@ -93,3 +93,8 @@ transform: rotate(180deg);
 right: 227px;
 position: absolute;
     }
+
+.slide_img {
+    max-width: 1008px;
+    max-height: 570px;
+}

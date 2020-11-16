@@ -147,14 +147,21 @@ button {
   grid-row: 2;
   margin-top: 23px;
   margin-left: 115px;
+  display: flex;
+  justify-content: center;
+  align-items: center;
 }
 
 .card-main {
   width: 444px;
-  height: 514px;
   background: #FFFFFF;
   box-shadow: 5px 5px 25px rgba(0, 0, 0, 0.1);
   border-radius: 30px;
+  display: flex;
+  flex-direction: column;
+  justify-content: space-between;
+  height: auto!important;
+  padding-bottom: 43px;
 }
 
 .card-main-text-wrapper {
@@ -191,13 +198,20 @@ button {
 }
 
 .card-main__btn {
-  margin-top: 128px;
+  margin-top: 72px!important;
   width: 309px;
   height: 67.55px;
   box-shadow: 3.67117px 3.67117px 18.3559px rgba(0, 0, 0, 0.1);
   border-radius: 29.3694px;
   border: 0;
   background: #FFFFFF;
+  display: flex;
+  margin: 0 auto;
+  justify-content: center;
+  align-items: center;
+}
+.card-main__btn.nonactive {
+  display: none;
 }
 
 .teamplate-block {
