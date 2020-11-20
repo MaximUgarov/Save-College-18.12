@@ -1,0 +1,13 @@
+/* div.text-block-wrapper:nth-child(1) {
+    display: none;
+}
+
+div.text-block-wrapper:nth-child(2) {
+    display: none;
+} */
+.content-container-teamplatesPages.center {
+    justify-content: center;
+}
+.text-block-wrapper.covid {
+    max-width: 680px;
+}

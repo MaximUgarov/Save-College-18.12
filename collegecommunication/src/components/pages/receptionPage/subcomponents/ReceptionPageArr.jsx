@@ -1,38 +1,43 @@
-import React from 'react'
+import React, { useEffect, useState } from 'react'
+import axios from 'axios'
 
 
 const ReceptionPageArr = () => {
 
-    const questionArr = [{
-        question__name: "Владимир",
-        question__date: "15.09.2016 14:08:24",
-        question__descr: "Здравствуйте! Подобное обращение в Ваш адрес было от Татьяна (15.09.2016 14:08:24), но воз и ныне там, ваши студенты продолжают курить на тротуарах, не только мешая прохожим и бросая окурки и пустые пачки. Подобное обращение так же будет отправлено в Департамент образования ВО."
-    }, {
-        question__name: "Владимир",
-        question__date: "15.09.2016 14:08:24",
-        question__descr: "Здравствуйте! Подобное обращение в Ваш адрес было от Татьяна (15.09.2016 14:08:24), но воз и ныне там, ваши студенты продолжают курить на тротуарах, не только мешая прохожим и бросая окурки и пустые пачки. Подобное обращение так же будет отправлено в Департамент образования ВО."
-    }, {
-        question__name: "Владимир",
-        question__date: "15.09.2016 14:08:24",
-        question__descr: "Здравствуйте! Подобное обращение в Ваш адрес было от Татьяна (15.09.2016 14:08:24), но воз и ныне там, ваши студенты продолжают курить на тротуарах, не только мешая прохожим и бросая окурки и пустые пачки. Подобное обращение так же будет отправлено в Департамент образования ВО."
-    }, {
-        question__name: "Владимир",
-        question__date: "15.09.2016 14:08:24",
-        question__descr: "Здравствуйте! Подобное обращение в Ваш адрес было от Татьяна (15.09.2016 14:08:24), но воз и ныне там, ваши студенты продолжают курить на тротуарах, не только мешая прохожим и бросая окурки и пустые пачки. Подобное обращение так же будет отправлено в Департамент образования ВО."
-    }]
+    const [CommentsPageArr, setCommentsPageArr] = useState([]);
+    const [IsLoadded, setIsLoadded] = useState(false)
+
+    useEffect(() => {
+        axios.get('http://localhost:8000/wp-json/wp/v2/comments')
+            .then(res => {
+                const arr = res.data
+                setCommentsPageArr(arr)
+                setIsLoadded(true)
+            })
+            .catch(err => console.log(err))
+    }, [setCommentsPageArr])
+
+
+    if (IsLoadded === true) {
 
     return (
-        questionArr.map((item) =>
-            <div className="question__wrapper-card" key={item.index}>
+        CommentsPageArr.map((CommentsPageArr) =>
+            <div className="question__wrapper-card" key={CommentsPageArr.id}>
                 <div className="question__text">
                     <div className="question__text-wrapper">
-                        <span className="question__spanName">{item.question__name}</span>
-                        <span className="question__spanDate">{item.question__date}</span>
+                        <span className="question__spanName">{CommentsPageArr.author_name}</span>
+                        <span className="question__spanDate">{CommentsPageArr.date}</span>
                     </div>
-                    <span className="question__textQuestion">{item.question__descr}</span>
+                    <span className="question__textQuestion" dangerouslySetInnerHTML={{ __html: CommentsPageArr.content.rendered }} />
                 </div>
             </div>)
     )
+}
+return(
+    <p>
+        gfdgdf
+    </p>
+)
 }
 
 

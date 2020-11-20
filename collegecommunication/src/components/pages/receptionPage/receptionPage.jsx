@@ -1,8 +1,39 @@
-import React, { Fragment } from 'react'
+import React, { Fragment, useState } from 'react'
 import '../../global/styles/ReceptionPage.css'
 import ReceptionPageArr from './subcomponents/ReceptionPageArr'
+import axios from 'axios'
 
-function ReceptionPage() {
+const ReceptionPage = () => {
+
+    const [Data, setData] = useState({
+        post: 1,
+        author_name: "",
+        author_email: "",
+        content: "",
+       });
+
+       const onChangeName = e => {
+        var val = e.target.value;
+        setData({...Data, author_name: val});
+    }
+    const onChangeemail = e => {
+        var val = e.target.value;
+        setData({...Data, author_email: val});
+    }
+    const onChangecontent = e => {
+        var val = e.target.value;
+        setData({...Data, content: val});
+    }
+
+       const handleSubmit = e => {
+        e.preventDefault();
+        let queryData = Object.entries(Data).map(([key, value]) => (`${key}=${value}`)).join('&');
+        axios.post(`http://localhost:8000/wp-json/wp/v2/comments`, { ...Data })
+          .then(res => {
+            console.log(Data);
+          })
+      }
+
     return (
         <Fragment>
             <h2 className="title-main">Приемная директора</h2>
@@ -10,13 +41,13 @@ function ReceptionPage() {
                 <div className="reception-block-wrapper">
                     <div className="reception-block-grid">
                         <div className="reception-block-form">
-                            <form action="">
+                            <form action="" onSubmit={handleSubmit}>
                                 <div className="form-reception-wrapper">
                                     <div className="form-reception-block-contant">
                                         <h4 className="form-reception-block__title">Задать вопрос</h4>
-                                        <input type="text" className="form-reception-block__input" placeholder="Имя" />
-                                        <input type="text" className="form-reception-block__input" placeholder="E-mail" />
-                                        <textarea name="" className="form-reception-block__teaxtArea" placeholder="Сообщение"></textarea>
+                                        <input type="text" className="form-reception-block__input" placeholder="Имя" name="author_name" onChange={onChangeName}/>
+                                        <input type="text" className="form-reception-block__input" placeholder="E-mail" name="author_email" onChange={onChangeemail}/>
+                                        <textarea name="" className="form-reception-block__teaxtArea" placeholder="Сообщение" name="content" onChange={onChangecontent}/>
                                         <div className="form-reception-block__btnWrapper">
                                             <button type="submit" className="form-reception-block__btn">Отправить</button>
                                         </div>

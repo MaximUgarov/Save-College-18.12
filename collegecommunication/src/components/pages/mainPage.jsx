@@ -1,6 +1,7 @@
 import React, { Component, Fragment } from 'react'
 import axios from 'axios'
 import '../global/styles/mainPage.css'
+import LoadingAnim from '../img/vxiit_zagruzchony_ekran.gif'
 
 
 
@@ -11,6 +12,7 @@ import slideImg1 from '../img/slider_img/slide1.png';
 
 import Slider from 'infinite-react-carousel';
 import MainPageNews from './subPagesComponents/mainPageNews';
+import Loading from '../global/Loading';
 
 
 
@@ -51,7 +53,7 @@ export class MainPage extends Component {
                         <Slider {...settings}>
                             {slideItems.map((slideItems) => <div className="slide" >
                                 <div className="slide-container">
-                                    <img src={slideItems.acf.add_photo} alt="" className="slide_img" />
+                                    <img src={slideItems.acf.add_photo} alt="" lazyloading className="slide_img" />
                                     <div className="slide-text">
                                         <div className="slide-text-wrapper">
                                             <h2 className="slide-text__title">{slideItems.title.rendered}</h2>
@@ -66,7 +68,7 @@ export class MainPage extends Component {
                 </div>
                 <div className="news-block"><MainPageNews></MainPageNews></div>
             </Fragment>
-        ) : <p>empty</p>
+        ) : <Loading/>
     }
 }
 

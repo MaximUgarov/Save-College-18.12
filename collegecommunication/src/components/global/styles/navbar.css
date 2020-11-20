@@ -49,6 +49,7 @@
     margin-right: 76px;
     margin-right: 44px;
     cursor: pointer;
+    position: relative;
 }
 
 .navbar__links:hover {
@@ -58,4 +59,33 @@
 .navbar-links-wrapper {
     display: flex;
     padding: 0;
+}
+.schedule-block {
+    display: none
+}
+.schedule-block.active {
+    width: 246px;
+    height: 171px;
+    background: #FFFFFF;
+    box-shadow: 5px 5px 25px rgba(0, 0, 0, 0.1);
+    border-radius: 25px;
+    display: flex;
+    flex-direction: column;
+    position: absolute;
+    left: 0;
+    align-items: flex-start;
+    top: 26px;
+    z-index: 999;
+}
+
+.schedule-link {
+    margin-left: 50px;
+    margin-top: 40px;
+    font-family: Montserrat;
+    font-style: normal;
+    font-weight: 500;
+    font-size: 15.43px;
+    line-height: 19px;
+    color: #000000;
+
 }

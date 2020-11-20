@@ -25,6 +25,10 @@ import TeachingstaffPage from './components/pages/teachingstaffPage/teachingstaf
 import test from '../src/components/test/akkredit.pdf'
 import Test from './components/pages/testPage/test';
 import MainPageNewsPage from './components/pages/MainPage/MainPageNewsPage';
+import Covid19Page from './components/pages/COVID-19Page/Covid-19Page';
+import StudentPage from './components/pages/studentPage/studentPage';
+import ParentPage from './components/pages/parentPage/ParentPage';
+import AbiturientPage from './components/pages/abiturientPage/abiturientPage';
 
 
 class App extends Component {
@@ -230,7 +234,12 @@ class App extends Component {
               <Route path='/fgs' component={EducationStandartPage} />
               <Route path='/RPS' component={TeachingstaffPage} />
               <Route path='/test' component={Test} />
-              <Route path='/' component={MainPageNewsPage} />
+              <Route path='/news/:id' component={MainPageNewsPage} />
+              <Route path='/COVID-19' component={Covid19Page}/>
+              <Route path='/students' component={StudentPage}/>
+              <Route path='/roditeli' component={ParentPage}/>
+              <Route path='/abiturient' component={AbiturientPage}/>
+
             </Switch>
           </div>
           <Footer></Footer>

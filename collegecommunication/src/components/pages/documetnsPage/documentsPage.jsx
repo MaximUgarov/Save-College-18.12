@@ -1,7 +1,7 @@
-import React, { Fragment, useContext } from 'react'
+import React, { Fragment, useEffect, useState  } from 'react'
 import { Link } from 'react-router-dom'
-import { Context } from '../../../context'
 import '../../global/styles/documentsPage.css'
+import axios from 'axios'
 
 
 
@@ -9,21 +9,41 @@ const DocumentsPage = () => {
 
 
 
-    const { documentsPageArr } = useContext(Context)
+    const [DocumentsPageArr, setDocumentsPageArr] = useState([]);
+    const [IsLoadded, setIsLoadded] = useState(false)
+
+    useEffect(() => {
+        axios.get('http://localhost:8000/wp-json/wp/v2/documents_page')
+            .then(res => {
+                const arr = res.data
+                setDocumentsPageArr(arr)
+                setIsLoadded(true)
+            })
+            .catch(err => console.log(err))
+    }, [setDocumentsPageArr])
 
 
+if(IsLoadded === true) {
     return (
+        DocumentsPageArr.map((DocumentsPageArr) =>
         <Fragment>
-            <h2 className="title-main">{documentsPageArr[0].documentsPage_title}</h2>
+            <h2 className="title-main">{DocumentsPageArr.title.rendered}</h2>
             <div className="content-container-teamplatesPages">
                 <div className="documents-wrapper">
-                    {documentsPageArr.map((item, index) =>
-                        <Link to={item.documentsLink} key={item.index} className="teamplete-link">{item.documentsLink_Title}</Link>)}
+                    
+                        <span className="teamplete-link" dangerouslySetInnerHTML={{ __html: DocumentsPageArr.content.rendered }}></span>
                 </div>
             </div>
         </Fragment>
+        )
 
     )
+}
+return(
+    <p>
+        gfgdfgf
+    </p>
+)
 }
 
 export default DocumentsPage

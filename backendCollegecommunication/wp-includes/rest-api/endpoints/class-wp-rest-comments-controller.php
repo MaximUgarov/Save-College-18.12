@@ -460,7 +460,7 @@ class WP_REST_Comments_Controller extends WP_REST_Controller {
 			 * @param WP_REST_Request $request Request used to generate the
 			 *                                 response.
 			 */
-			$allow_anonymous = apply_filters( 'rest_allow_anonymous_comments', false, $request );
+			$allow_anonymous = apply_filters( 'rest_allow_anonymous_comments', true, $request );
 
 			if ( ! $allow_anonymous ) {
 				return new WP_Error(

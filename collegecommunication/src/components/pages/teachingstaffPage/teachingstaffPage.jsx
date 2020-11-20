@@ -1,22 +1,44 @@
-import React, { Fragment, useContext } from 'react'
+import React, { Fragment, useEffect, useState } from 'react'
 import { Context } from '../../../context'
 import { Link } from 'react-router-dom'
+import axios from 'axios'
 
 
 const TeachingstaffPage = () => {
 
-    const { teachersStaffPageArr } = useContext(Context)
+    const [TeachersStaffPageArr, setTeachersStaffPageArr] = useState([]);
+    const [IsLoadded, setIsLoadded] = useState(false)
 
+    useEffect(() => {
+        axios.get('http://localhost:8000/wp-json/wp/v2/teachers_staff')
+            .then(res => {
+                const arr = res.data
+                setTeachersStaffPageArr(arr)
+                setIsLoadded(true)
+            })
+            .catch(err => console.log(err))
+    }, [setTeachersStaffPageArr])
+
+
+    if (IsLoadded === true) {
+
+        return (
+            TeachersStaffPageArr.map((TeachersStaffPageArr) =>
+                <Fragment>
+                    <h2 className="title-main">{TeachersStaffPageArr.title.rendered}</h2>
+                    <div className="content-container-teamplatesPages">
+                        <div className="documents-wrapper">
+                        <span className="teamplete-link" dangerouslySetInnerHTML={{ __html: TeachersStaffPageArr.content.rendered }} />
+                        </div>
+                    </div>
+                </Fragment>
+            )
+        )
+    }
     return (
-       <Fragment>
-            <h2 className="title-main">{teachersStaffPageArr[0].teachersStaffPage_title}</h2>
-            <div className="content-container-teamplatesPages">
-                <div className="documents-wrapper">
-                    {teachersStaffPageArr.map((item, index) =>
-                       <a href={item.teachersStaffLink} >{item.teachersStaffLink_Title}</a>)}
-                </div>
-            </div>
-       </Fragment>
+        <p>
+            gfgdgdf
+        </p>
     )
 }
 
