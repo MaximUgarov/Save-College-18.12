@@ -1,5 +1,6 @@
 .App {
   text-align: center;
+  overflow-x: hidden;
 }
 
 .App-logo {
@@ -34,5 +35,14 @@
   }
   to {
     transform: rotate(360deg);
+  }
+}
+
+@media all and (max-width: 1100px) {
+  .content-container {
+    margin-top: 0px;
+  }
+  .title-main {
+    margin-left: 76px;
   }
 }

@@ -59,10 +59,13 @@
 .navbar-links-wrapper {
     display: flex;
     padding: 0;
+    align-items: flex-start;
 }
+
 .schedule-block {
     display: none
 }
+
 .schedule-block.active {
     width: 246px;
     height: 171px;
@@ -74,8 +77,10 @@
     position: absolute;
     left: 0;
     align-items: flex-start;
-    top: 26px;
-    z-index: 999;
+    top: 35px;
+    z-index: 9;
+    height: auto;
+    padding-bottom: 21px;
 }
 
 .schedule-link {
@@ -87,5 +92,49 @@
     font-size: 15.43px;
     line-height: 19px;
     color: #000000;
+    text-align: left;
+
+}
+
+.navbar-partners-block-wrapper {
+    display: block;
+    position: relative;
+}
+
+
+
+
+
+
+
+
+
+
+/* Адаптив */
+@media all and (max-width: 1095px) {
+
+    .covidBtn,
+    .pathersBtn,
+    .booksBtn,
+    .accountBtn {
+        margin-right: 27px;
+    }
+
+    .navbar-wrapper {
+        padding-left: 102px;
+    }
+
+    .navbar__links {
+        margin-right: 32px;
+        display: flex;
+        word-wrap: break-word;
+        flex-wrap: nowrap;
+        align-items: center;
+    }
+
+    li.navbar__links>img:nth-child(1) {
+        width: 14px;
+        margin-left: 6px;
+    }
 
 }

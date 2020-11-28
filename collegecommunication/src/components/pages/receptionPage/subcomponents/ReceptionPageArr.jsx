@@ -1,5 +1,6 @@
 import React, { useEffect, useState } from 'react'
 import axios from 'axios'
+import Loading from '../../../global/Loading';
 
 
 const ReceptionPageArr = () => {
@@ -34,9 +35,7 @@ const ReceptionPageArr = () => {
     )
 }
 return(
-    <p>
-        gfdgdf
-    </p>
+    <Loading/>
 )
 }
 

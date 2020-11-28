@@ -40,7 +40,7 @@ const AbiturientPage = () => {
                     )}
                 </div>
                     </div>
-                    <div className="content-container-teamplatesPages" style={{"display": "grid", "grid-template-columns": "1fr 1fr", "gap": "40px 108px"}}><img src={AbiturientPageArr.acf.photo.url} className="teapleate-photo"/>
+                    <div className="content-container-teamplatesPages grid"><img src={AbiturientPageArr.acf.photo.url} className="teapleate-photo"/>
                         <img src={AbiturientPageArr.acf.photo_two.url} className="teapleate-photo"/><div dangerouslySetInnerHTML={{__html: AbiturientPageArr.acf.video}}></div><div dangerouslySetInnerHTML={{__html: AbiturientPageArr.acf.video_two}}></div></div>
                 </Fragment>
             )}

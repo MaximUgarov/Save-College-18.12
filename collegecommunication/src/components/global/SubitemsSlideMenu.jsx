@@ -12,7 +12,6 @@ const SubItemsSlideBar = (props) => {
 
     const subMenuArr = props.arr;
     useEffect(() => {
-        console.log(subMenuArr)
     })
     const opened = props.open
     if(!opened) return null

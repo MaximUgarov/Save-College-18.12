@@ -7,6 +7,7 @@ import bus_icon from '../../img/bus_icon.svg'
 import InformationPageContactInfo from './subComponents/informationPageContactInfo'
 import InformationPageHistory from './subComponents/informationPageHistory'
 import InformationPageFounderInfo from './subComponents/informationPageFounderInfo'
+import Loading from '../../global/Loading'
 
 const InformationPage = () => {
 
@@ -50,7 +51,7 @@ const InformationPage = () => {
         )
     }
     return(
-        <p>gfdhhhhhhhhhhhhhh</p>
+        <Loading/>
     )
 }
 

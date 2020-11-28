@@ -1,5 +1,5 @@
 .card-main__btn:hover {
-    background: #7787FF!important;
+    background: #7787FF !important;
     color: #FFFFFF;
 
 }
@@ -151,5 +151,12 @@
     border-radius: 29.3694px;
     border: 0;
     margin-top: 110px;
-   }
-   
+}
+
+
+@media all and (max-width: 1100px) {
+    .news-block {
+        padding-left: 0;
+        margin-top: 32px;
+    }
+}

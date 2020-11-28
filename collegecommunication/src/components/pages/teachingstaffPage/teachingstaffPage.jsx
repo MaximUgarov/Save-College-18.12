@@ -2,6 +2,7 @@ import React, { Fragment, useEffect, useState } from 'react'
 import { Context } from '../../../context'
 import { Link } from 'react-router-dom'
 import axios from 'axios'
+import Loading from '../../global/Loading'
 
 
 const TeachingstaffPage = () => {
@@ -36,9 +37,7 @@ const TeachingstaffPage = () => {
         )
     }
     return (
-        <p>
-            gfgdgdf
-        </p>
+        <Loading/>
     )
 }
 

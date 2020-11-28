@@ -3,7 +3,7 @@
     width: 75px;
     position: fixed;
     background-color: #131313;
-    z-index: 99;
+    z-index: 99999;
 }
 
 .slidebar-content {
@@ -72,6 +72,25 @@
     cursor: pointer;
 }
 
+.mobile-menu-list__elTitle {
+    font-family: Montserrat;
+    font-style: normal;
+    font-weight: 500;
+    font-size: 13px;
+    line-height: 16px;
+    color: #000000;
+    cursor: pointer;
+    padding-left: 59px;
+    display: flex;
+    align-items: center;
+    width: max-content;
+    display: flex;
+    width: 100%;
+    padding-right: 37px;
+    justify-content: space-between;
+    max-width: 503px;
+}
+
 .arrowDonwBtn {
     margin-right: 13px;
     transition: all 0.5s;
@@ -99,6 +118,13 @@
 
 .menu-list__el {
     margin-bottom: 84px;
+    display: flex;
+    flex-direction: column;
+    align-items: flex-start;
+}
+
+.mobile-menu-list__el {
+    padding-bottom: 84px;
     display: flex;
     flex-direction: column;
     align-items: flex-start;
@@ -152,4 +178,58 @@
     width: 24px;
     left: -35px;
     top: 10px;
+}
+
+
+
+
+
+/* mobile */
+.mobile-menu-list__el.active {
+    position: absolute;
+    background-color: #fff;
+    width: 100%;
+    top: 88px;
+    height: 100%;
+}
+
+.mobile-menu-list__elTitle.active {
+    display: flex;
+    width: 100%;
+    height: 75px;
+    background: linear-gradient(93.38deg, #102CFC 5.04%, #7C00FF 67.59%);
+    color: #FFFFFF;
+    align-items: center;
+    padding-left: 37px;
+    height: auto;
+    padding: 28px;
+    margin-left: 0px;
+    max-width: unset;
+    justify-content: unset;
+    margin-bottom: 62px;
+}
+
+.mobile-menu-sublist__elTitle.active {
+    margin-top: 62px;
+    height: auto;
+    padding: 28px;
+    margin-left: 0px;
+}
+.mobile-menu-sublist__elTitle {
+    margin-left: 0px;
+    padding-bottom: 62px;
+}
+.mobile-menu-sublist__el.active {
+    margin-left: 62px;
+    display: flex;
+    flex-direction: column;
+    align-items: flex-start;
+}
+
+.arrowDonwBtn__mobileNav {
+    margin-left: 47px;
+}
+.arrowDonwBtn__mobileNav.active {
+    transform: rotate(90deg);
+    margin-right: 47px;
 }

@@ -40,43 +40,56 @@
 
 .resources-block {
     display: flex;
-flex-direction: column;
-align-items: flex-start;
-font-family: Montserrat;
-font-style: normal;
-font-weight: 600;
-font-size: 18px;
-line-height: 22px;
-color: #000000;
-max-width: 444px;
-text-align: left;
-margin-bottom: 138px;
+    flex-direction: column;
+    align-items: flex-start;
+    font-family: Montserrat;
+    font-style: normal;
+    font-weight: 600;
+    font-size: 18px;
+    line-height: 22px;
+    color: #000000;
+    max-width: 444px;
+    text-align: left;
+    margin-bottom: 138px;
 
 }
+
 .resources-block-linkText {
     font-family: Montserrat;
-font-style: normal;
-font-weight: normal;
-font-size: 18px;
-line-height: 22px;
-text-decoration-line: underline;
-color: #102CFC;
-margin-top: 30px;
+    font-style: normal;
+    font-weight: normal;
+    font-size: 18px;
+    line-height: 22px;
+    text-decoration-line: underline;
+    color: #102CFC;
+    margin-top: 30px;
 }
+
 .resources-grid-wrapper {
     display: flex;
     flex-wrap: wrap;
     max-width: 1008px;
     margin: 0 auto;
     justify-content: space-between;
-   }
-   
-   div.resources-block > span > p:nth-child(1) > a {
+}
+
+div.resources-block>span>p:nth-child(1)>a {
     margin-bottom: 22px;
-   }
-   div.resources-block > span > p {
+}
+
+div.resources-block>span>p {
     height: auto;
     display: flex;
     flex-direction: column;
-   }
-   
+}
+
+@media all and (max-width: 800px) {
+    .resources-grid-wrapper {
+        padding-left: 42px;
+        padding-right: 20px;
+    }
+
+    .books-btns {
+        display: none;
+    }
+}

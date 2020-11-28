@@ -1,0 +1,100 @@
+.dropdownContent-content {
+    display: flex;
+    flex-direction: column;
+    width: 100%;
+}
+
+.dropDownContent-wrapper {
+    display: flex;
+    width: 100%;
+    height: 100px;
+    background: #FFFFFF;
+    box-shadow: 5px 5px 25px rgba(0, 0, 0, 0.1);
+    border-radius: 30px;
+    justify-content: space-between;
+    align-items: center;
+    padding-left: 100px;
+    padding-right: 44px;
+    margin-bottom: 47px;
+    position: relative;
+    z-index: 2;
+    cursor: pointer;
+}
+
+.dropDownContent-title {
+    font-family: Montserrat;
+    font-style: normal;
+    font-weight: 600;
+    font-size: 20px;
+    line-height: 24px;
+    color: #000000;
+}
+
+.dropDownContent-arrowBtn {
+    width: 20px;
+    height: 12px;
+}
+
+.dropDownContent-arrowBtn.active {
+    transform: rotate(90deg);
+}
+
+.wp-block-table {
+    text-align: left;
+    width: 100%;
+    margin-top: -61px;
+    background-color: #fff;
+}
+
+div.dropDownContent-wrapper:nth-child(1) {
+    position: relative;
+    z-index: 2;
+}
+
+.wp-block-table>table:nth-child(1)>tbody:nth-child(1)>tr:nth-child(1) {
+    background: #4564FF;
+    font-family: Montserrat;
+    font-style: normal;
+    font-weight: 600;
+    font-size: 17px;
+    line-height: 21px;
+    color: #FFFFFF;
+}
+
+.wp-block-table>table>tbody>tr>td {
+    padding: 30px;
+}
+
+.wp-block-table>table:nth-child(1) {
+    width: 99%;
+    border-collapse: collapse;
+    margin: 0 auto;
+}
+
+.wp-block-table>table:nth-child(1)>tbody:nth-child(1) {
+    width: 100%;
+
+}
+
+.dropcontent-span {
+    text-align: left;
+}
+
+.dropcontent-span p {
+    font-family: Montserrat;
+    font-style: normal;
+    font-weight: normal;
+    font-size: 18px;
+    line-height: 22px;
+    color: #000000;
+    max-width: 800px;
+    margin-top: 90px
+}
+
+.dropcontent-span {
+    padding-bottom: 50px;
+}
+
+.dropcontent-span>p {
+    padding-left: 48px;
+}

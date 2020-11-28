@@ -59,7 +59,18 @@ span.visuallyimpaired-block-spanText:nth-child(3) {
 span.visuallyimpaired-block-spanText:nth-child(4) {
     margin-top: 90px;
 }
+
 .visuallyimpaired-block-btn {
     cursor: pointer;
     justify-content: space-evenly;
+}
+
+.visuallyimpaired-block-subSpanText {
+    font-family: Montserrat;
+    font-style: normal;
+    font-weight: 600;
+    font-size: 62px;
+    line-height: 76px;
+    color: #000000;
+    text-align: left;
 }

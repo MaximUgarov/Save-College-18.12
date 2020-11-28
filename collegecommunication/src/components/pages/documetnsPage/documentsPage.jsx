@@ -2,6 +2,7 @@ import React, { Fragment, useEffect, useState  } from 'react'
 import { Link } from 'react-router-dom'
 import '../../global/styles/documentsPage.css'
 import axios from 'axios'
+import Loading from '../../global/Loading'
 
 
 
@@ -40,9 +41,7 @@ if(IsLoadded === true) {
     )
 }
 return(
-    <p>
-        gfgdfgf
-    </p>
+  <Loading/>
 )
 }
 

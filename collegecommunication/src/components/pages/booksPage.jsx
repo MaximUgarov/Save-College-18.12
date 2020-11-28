@@ -3,6 +3,7 @@ import axios from 'axios'
 
 import '../global/styles/booksPage.css'
 import SubBooksComponent from './subPagesComponents/subBooksComponent'
+import Loading from '../global/Loading'
 
 const BooksPage = () => {
 
@@ -10,6 +11,7 @@ const BooksPage = () => {
 
 
     const [BooksArr, setBooksArr] = useState([]);
+    const [IsLoadded, setIsLoadded] = useState(false)
 
     useEffect(() => {
         axios.get('http://localhost:8000/wp-json/wp/v2/electron_libraries')
@@ -17,10 +19,11 @@ const BooksPage = () => {
                 const arr = res.data
                 setBooksArr(arr)
                 console.log(BooksArr)
+                setIsLoadded(true)
             })
             .catch(err => console.log(err))
     }, [setBooksArr])
-
+if(IsLoadded === true) {
     return (
         <Fragment>
             <h2 className="title-main">Электронные библиотеки</h2>
@@ -55,6 +58,10 @@ const BooksPage = () => {
             </div>
         </Fragment>
     )
+}
+return(
+    <Loading/>
+)
 }
 
 export default BooksPage

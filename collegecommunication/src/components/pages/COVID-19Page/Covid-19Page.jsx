@@ -1,6 +1,7 @@
 import React, { Fragment, useEffect, useState } from 'react'
 import axios from 'axios'
 import '../../../components/global/styles/Covid-19.css'
+import Loading from '../../global/Loading';
 const Covid19Page = () => {
 
 
@@ -42,7 +43,7 @@ const Covid19Page = () => {
         )
     }
     return (
-        <p>gfhdfv</p>
+        <Loading/>
     )
 }
 

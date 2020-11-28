@@ -1,12 +1,8 @@
 import React, { Component, Fragment, useState, useContext } from 'react'
 import './styles/leftmenu.css'
-import burgerBtn from '../img/burger_btn.svg'
-import vkBtn from '../img/vk_btn.svg'
-import instBtn from '../img/instagram_btn.svg'
-import arrowDown from '../img/arrow_down.svg'
-import SubMenuArr from './SubitemsSlideMenu'
 import TransitionListmenucomponent from './transitionListmenucomponent'
 import { Context } from './context'
+
 const ItemsSlideBar = () => {
 
     const [OpenMenu, setOpenMenu] = useState(false)
@@ -18,7 +14,7 @@ const ItemsSlideBar = () => {
             subitem_link: "/info"
         }, {
             subitem_title: "Структура и органы управления",
-            subitem_link: "#"
+            subitem_link: "/direction"
         }, {
             subitem_title: "Документы",
             subitem_link: "/documents"
@@ -36,23 +32,23 @@ const ItemsSlideBar = () => {
         }
             , {
             subitem_title: "Материально-техническое обеспечение",
-            subitem_link: "#"
+            subitem_link: "/tehnical"
         }
             , {
             subitem_title: "Вакантные места для приема",
-            subitem_link: "#"
+            subitem_link: "http://localhost:8000/wp-content/uploads/2020/11/vacantn.pdf"
         }
             , {
             subitem_title: "Стипендии и иные виды материальной поддержки",
-            subitem_link: "#"
+            subitem_link: "/stip"
         }
             , {
             subitem_title: "Финансово-хозяйственная деятельность",
-            subitem_link: "#"
+            subitem_link: "/fhd"
         }
             , {
             subitem_title: "Платные образовательные услуги",
-            subitem_link: "#"
+            subitem_link: "/pay"
         }]
     },
     {
@@ -60,44 +56,44 @@ const ItemsSlideBar = () => {
         item_link: "#",
         subitems: [{
             subitem_title: "Численность студентов",
-            subitem_link: "#"
+            subitem_link: "/counts"
         }, {
             subitem_title: "График учебного процесса",
-            subitem_link: "#"
+            subitem_link: "/grafiki"
         }, {
             subitem_title: "Учебно-исследовательская деятельность ",
-            subitem_link: "#"
+            subitem_link: "/edumaterials"
         }, {
             subitem_title: "Государственная итоговая аттестация",
-            subitem_link: "#"
+            subitem_link: "/gia"
         }
             , {
             subitem_title: "Расписание звонков",
-            subitem_link: "#"
+            subitem_link: "/zvonki"
         }
             , {
             subitem_title: "Общее расписание",
-            subitem_link: "#"
+            subitem_link: `http://localhost:8000/wp-content/uploads/2020/11/obshhee_raspisanie.xlsx`
         }
             , {
             subitem_title: "Сессия",
-            subitem_link: "#"
+            subitem_link: "/zo"
         }
             , {
             subitem_title: "Олимпиады проф. мастерства",
-            subitem_link: "#"
+            subitem_link: "/konkurs"
         }
             , {
             subitem_title: "Демонстрационный экзамен",
-            subitem_link: "#"
+            subitem_link: "/demoekzamen"
         }
             , {
             subitem_title: "Дистанционное обучение",
-            subitem_link: "#"
+            subitem_link: "/distance-learning"
         }
             , {
             subitem_title: "Независимая оценка качества",
-            subitem_link: "#"
+            subitem_link: "/nsoko"
         }]
     },
     {
@@ -105,13 +101,13 @@ const ItemsSlideBar = () => {
         item_link: "#",
         subitems: [{
             subitem_title: "Абитуриенту",
-            subitem_link: "#"
+            subitem_link: "/abiturient"
         }, {
             subitem_title: "День открытых дверей",
-            subitem_link: "#"
+            subitem_link: "/opendoor"
         }, {
             subitem_title: "Набор 2020",
-            subitem_link: "#"
+            subitem_link: "/nabor"
         }, {
             subitem_title: "Документы",
             subitem_link: "#"

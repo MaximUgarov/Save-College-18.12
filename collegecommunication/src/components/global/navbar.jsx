@@ -2,6 +2,7 @@ import React, { Component, Fragment, useState } from 'react'
 import './styles/navbar.css'
 
 import { Link } from "react-router-dom"
+import { useHistory } from 'react-router'
 
 import logo from '../img/logoNavbar.svg'
 import covidBtn from '../img/covid_btn.svg'
@@ -14,6 +15,14 @@ import openArrowPopup from '../img/OpenArrowPopup.svg'
 const Navbar = () => {
 
     const [SchedulePopUp, setSchedulePopUp] = useState(false)
+    const [PartnersPopUp, setPartnersPopUp] = useState(false)
+
+    const history = useHistory();
+
+    history.listen((location, action) => {
+        setSchedulePopUp(false)
+        setPartnersPopUp(false)
+    })
 
     return (
         <Fragment>
@@ -26,7 +35,14 @@ const Navbar = () => {
                         <Link to='/COVID-19'>
                             <img className="covidBtn" src={covidBtn} alt="Информация о covid" />
                         </Link>
-                        <img className="pathersBtn" src={PathersBtn} alt="Наши партнеры" />
+                        <div className="navbar-partners-block-wrapper">
+                            <img className="pathersBtn" src={PathersBtn} alt="Наши партнеры" onClick={() => setPartnersPopUp(!PartnersPopUp)}/>
+                            <div className={PartnersPopUp ? "schedule-block active" : "schedule-block"}>
+                                <a className="schedule-link" href="http://rasp.kolledgsvyazi.ru/spo.pdf">Билет в будущее</a>
+                                <a className="schedule-link" href="https://vk.com/rctt35">РЦТТ35</a>
+                                <a className="schedule-link" href="https://ssuz.vip.edu35.ru/auth/login-page">БАРС Web-образование</a>
+                            </div>
+                        </div>
                         <Link to='/books'>
                             <img className="booksBtn" src={booksBtn} alt="Книги" />
                         </Link>
@@ -39,7 +55,12 @@ const Navbar = () => {
                 <menu className="navbar-links-wrapper">
 
                     <li><Link to="/info" className="navbar__links">Сведения об ОО</Link></li>
-                    <li className="navbar__links" onClick={() => setSchedulePopUp(!SchedulePopUp)}>Раписание <img src={openArrowPopup} alt="стрелка открытия всплывающего окна" /><div className={SchedulePopUp ? "schedule-block active" : "schedule-block"}><a className="schedule-link" href="http://rasp.kolledgsvyazi.ru/spo.pdf">1 корпус</a><a className="schedule-link" href="http://rasp.kolledgsvyazi.ru/npo.pdf">2 корпус</a></div></li>
+                    <li className="navbar__links" onClick={() => setSchedulePopUp(!SchedulePopUp)}>Раписание <img src={openArrowPopup} alt="стрелка открытия всплывающего окна" />
+                        <div className={SchedulePopUp ? "schedule-block active" : "schedule-block"}>
+                            <a className="schedule-link" href="http://rasp.kolledgsvyazi.ru/spo.pdf">1 корпус</a>
+                            <a className="schedule-link" href="http://rasp.kolledgsvyazi.ru/npo.pdf">2 корпус</a>
+                        </div>
+                    </li>
                     <li><Link to="/students" className="navbar__links">Студенту</Link></li>
                     <li><Link to="/roditeli" className="navbar__links">Родителям</Link></li>
                     <li><Link to="/abiturient" className="navbar__links">Абитуриенту</Link></li>

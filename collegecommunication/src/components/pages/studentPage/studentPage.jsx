@@ -1,5 +1,6 @@
 import React, { Fragment, useEffect, useState } from 'react'
 import axios from 'axios'
+import Loading from '../../global/Loading';
 
 const StudentPage = () => {
 
@@ -41,7 +42,7 @@ const StudentPage = () => {
         )
     }
     return (
-        <p>fdgfdg</p>
+        <Loading/>
     )
 }
 export default StudentPage

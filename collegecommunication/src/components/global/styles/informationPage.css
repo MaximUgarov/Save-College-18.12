@@ -39,9 +39,11 @@
     color: #000000;
     max-width: 240px;
 }
+
 .transport-block__img {
     max-width: 59px;
 }
+
 .subTextHistroySpan {
     font-family: Montserrat;
     font-style: italic;
@@ -49,10 +51,48 @@
     font-size: 20px;
     line-height: 24px;
     color: #000000;
-   }
-   .subTextHistory {
+}
+
+.subTextHistory {
     max-width: 347px;
     margin: 0 auto;
     margin-top: 76px;
-   }
-   
+}
+
+@media all and (max-width: 1050px) {
+    .listofnumbers {
+        width: 95%;
+    }
+
+}
+
+@media all and (max-width: 860px) {
+    .listofnumbers {
+        margin-bottom: 33px;
+    }
+}
+
+@media all and (max-width: 505px) {
+    .transport-block {
+        width: 100%;
+    }
+
+    .transport-block-span {
+        font-family: Montserrat;
+        font-style: normal;
+        font-weight: normal;
+        font-size: 13.8288px;
+        line-height: 17px;
+        color: #000000;
+    }
+
+    .map-informationpage {
+        width: 100%;
+    }
+}
+
+@media all and (max-width: 385px) {
+    .transport-block-span {
+        max-width: 131px;
+    }
+}

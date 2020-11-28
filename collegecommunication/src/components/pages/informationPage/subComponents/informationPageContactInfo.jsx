@@ -35,7 +35,7 @@ function splitDescription(content) {
                 </div>
                 <div className="text-block-wrapper">
                     <a href="https://yandex.ru/maps/org/vologodskiy_kolledzh_svyazi_i_informatsionnykh_tekhnologiy/1769469695/?ll=39.892379%2C59.208341&source=wizbiz_new_text_single&z=18">
-                        <img src={mapImg} alt="Сыллка на карту с местонахождением колледжа" />
+                        <img src={mapImg} alt="Сыллка на карту с местонахождением колледжа" className="map-informationpage"/>
                     </a>
                     <div className="transport-block">
                         <div className="transport-block-content-wrap"><img src={bus_icon} alt="Картинка автобуса" className="transport-block__img" /><span className="transport-block-span">Автобусы: 6, 37, 40 (остановка улица Зосимовская)</span></div>

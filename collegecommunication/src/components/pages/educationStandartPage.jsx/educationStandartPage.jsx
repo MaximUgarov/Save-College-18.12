@@ -1,6 +1,7 @@
 import React, { Fragment, useEffect, useState } from 'react'
 import { Link } from 'react-router-dom'
 import axios from 'axios'
+import Loading from '../../global/Loading';
 
 const EducationStandartPage = () => {
 
@@ -35,7 +36,7 @@ const EducationStandartPage = () => {
         )
     }
     return(
-        <p>dgfgfd</p>
+        <Loading/>
     )
 }
 

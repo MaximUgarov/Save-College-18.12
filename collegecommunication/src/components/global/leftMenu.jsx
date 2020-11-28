@@ -1,4 +1,4 @@
-import React, { Component, Fragment, useState } from 'react'
+import React, { Component, Fragment, useState, useLocation, useEffect } from 'react'
 import './styles/leftmenu.css'
 import burgerBtn from '../img/burger_btn.svg'
 import vkBtn from '../img/vk_btn.svg'
@@ -6,10 +6,17 @@ import instBtn from '../img/instagram_btn.svg'
 import arrowDown from '../img/arrow_down.svg'
 import ItemsSlideBar from './itemsSlideMenu'
 import close from '../img/closeburger.svg'
+import { createBrowserHistory } from 'history'
+import { useHistory } from 'react-router'
 
-const SlideBar = () => {
+const SlideBar = (props) => {
 
     const [OpenMenu, setOpenMenu] = useState(false)
+    const history = useHistory();
+
+    history.listen((location, action) => {
+        setOpenMenu(false)
+    })
 
 
     return (
@@ -30,7 +37,7 @@ const SlideBar = () => {
                 </div>
                 <div className={OpenMenu ? "menu-body-wrapper" : "menu-body-wrapper active"}>
                     <div className="menu-list-wrapper">
-                           <ItemsSlideBar></ItemsSlideBar>
+                        <ItemsSlideBar></ItemsSlideBar>
                     </div>
                 </div>
             </div>
