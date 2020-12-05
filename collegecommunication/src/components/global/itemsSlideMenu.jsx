@@ -110,7 +110,7 @@ const ItemsSlideBar = () => {
             subitem_link: "/nabor"
         }, {
             subitem_title: "Документы",
-            subitem_link: "#"
+            subitem_link: "/ndoc"
         }]
     },
     {
@@ -118,16 +118,16 @@ const ItemsSlideBar = () => {
         item_link: "#",
         subitems: [{
             subitem_title: "Госзадание",
-            subitem_link: "#"
+            subitem_link: "/aufgabe"
         }, {
             subitem_title: "Закупки",
-            subitem_link: "#"
+            subitem_link: "/purchase"
         }, {
             subitem_title: "Бухотчётность",
-            subitem_link: "#"
+            subitem_link: "/bookkeeping"
         }, {
             subitem_title: "Пожертвования",
-            subitem_link: "#"
+            subitem_link: "/donations"
         }]
     }, {
         item_titel: 'Внеучебная деятельность',
@@ -137,19 +137,19 @@ const ItemsSlideBar = () => {
             subitem_link: "#"
         }, {
             subitem_title: "Профилактика COVID-19",
-            subitem_link: "#"
+            subitem_link: "/COVID-19"
         }, {
             subitem_title: "Кружки и секции",
-            subitem_link: "#"
+            subitem_link: "/wp-content/uploads/2020/12/kruzhki.pdf"
         }, {
             subitem_title: "Конкурсы",
-            subitem_link: "#"
+            subitem_link: "/konkyrsy"
         }, {
             subitem_title: "Конференция",
-            subitem_link: "#"
+            subitem_link: "/it_forum"
         }, {
             subitem_title: "Великая Победа ",
-            subitem_link: "#"
+            subitem_link: "/pobeda"
         }, {
             subitem_title: "О спорте ",
             subitem_link: "#"

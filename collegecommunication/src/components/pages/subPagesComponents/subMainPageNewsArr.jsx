@@ -43,7 +43,7 @@ const SubMainPageNewsArr = () => {
                     <div className={NewsArr.acf.important_news ? "card-main-wrapper main" : "card-main-wrapper"}>
                         <div className={NewsArr.acf.important_news ? "card-main-text-wrapper main" : "card-main-text-wrapper"}>
                             <h3 className={NewsArr.acf.important_news ? "card-main__title main" : "card-main__title"}>{NewsArr.title.rendered}</h3>
-                            <span className={NewsArr.acf.important_news ? "card-main__text main" : "card-main__text"} dangerouslySetInnerHTML={{ __html: NewsArr.content.rendered }}></span>
+                            <span className={NewsArr.acf.important_news ? "card-main__text main" : "card-main__text"} dangerouslySetInnerHTML={{ __html: NewsArr.acf.card_text }}></span>
                         </div>
                         {NewsArr.acf.important_news ? <Link to={`/news/${NewsArr.id}`} className={NewsArr.acf.important_news ? "card-main__btn main" : "card-main__btn"}>Подробнее...</Link> : null}
                     </div>
@@ -58,7 +58,7 @@ const SubMainPageNewsArr = () => {
                 <div className={NewsArr.acf.important_news ? "card-main-wrapper main" : "card-main-wrapper"}>
                     <div className={NewsArr.acf.important_news ? "card-main-text-wrapper main" : "card-main-text-wrapper"}>
                         <h3 className={NewsArr.acf.important_news ? "card-main__title main" : "card-main__title"}>{NewsArr.title.rendered}</h3>
-                        <span className={NewsArr.acf.important_news ? "card-main__text main" : "card-main__text"} dangerouslySetInnerHTML={{ __html: NewsArr.content.rendered }}></span>
+                        <span className={NewsArr.acf.important_news ? "card-main__text main" : "card-main__text"} dangerouslySetInnerHTML={{ __html: NewsArr.acf.card_text }}></span>
                     </div>
 
                 </div></Link>)
@@ -66,7 +66,7 @@ const SubMainPageNewsArr = () => {
         )
     }
     return (
-        <Loading></Loading>
+        <Loading/>
     )
 }
 export default SubMainPageNewsArr

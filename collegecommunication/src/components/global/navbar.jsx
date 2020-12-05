@@ -38,7 +38,7 @@ const Navbar = () => {
                         <div className="navbar-partners-block-wrapper">
                             <img className="pathersBtn" src={PathersBtn} alt="Наши партнеры" onClick={() => setPartnersPopUp(!PartnersPopUp)}/>
                             <div className={PartnersPopUp ? "schedule-block active" : "schedule-block"}>
-                                <a className="schedule-link" href="http://rasp.kolledgsvyazi.ru/spo.pdf">Билет в будущее</a>
+                                <a className="schedule-link" href="https://bilet.worldskills.ru">Билет в будущее</a>
                                 <a className="schedule-link" href="https://vk.com/rctt35">РЦТТ35</a>
                                 <a className="schedule-link" href="https://ssuz.vip.edu35.ru/auth/login-page">БАРС Web-образование</a>
                             </div>
