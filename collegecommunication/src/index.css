@@ -682,7 +682,7 @@ button {
 }
 
 .text-block-wrapper.set {
-  max-width: 800px;
+  max-width: 1008px;
 }
 
 .wp-block-table.is-style-regular {
@@ -717,4 +717,8 @@ td {
 
   display: none;
 
+}
+
+th {
+  padding: 1rem
 }

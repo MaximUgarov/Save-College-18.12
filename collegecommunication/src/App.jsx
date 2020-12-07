@@ -63,6 +63,11 @@ import DonationsPage from './components/pages/DonationsPage/DonationsPage';
 import ContestsPage from './components/pages/ContestsPage/ContestsPage';
 import ConferencePage from './components/pages/ConferencePage/ConferencePage';
 import GreatVictoryPage from './components/pages/GreatVictoryPage/GreatVictoryPage';
+import MassSportsPage from './components/pages/MassSportsPage/MassSportsPage';
+import VolunteersPage from './components/pages/VolunteersPage/VolunteersPage';
+import FormulaSuccessPageMembers from './components/pages/FormulaSuccessPage/SubComponents/FormulaSuccessPageMembers';
+import FormulaSuccessPage from './components/pages/FormulaSuccessPage/FormulaSuccessPage';
+import MuseumPage from './components/pages/MuseumPage/MuseumPage';
 
 
 
@@ -148,6 +153,11 @@ class App extends Component {
             <Route path='/konkyrsy' component={ContestsPage} />
             <Route path='/it_forum' component={ConferencePage} />
             <Route path='/pobeda' component={GreatVictoryPage} />
+            <Route path='/sport' component={MassSportsPage} />
+            <Route path='/volonters' component={VolunteersPage} />
+            <Route path='/formula_uspeha/' component={FormulaSuccessPage} />
+            <Route path='/formula_uspehaMember/:id' component={FormulaSuccessPageMembers} />
+            <Route path='/musey_svazy' component={MuseumPage} />
 
 
 

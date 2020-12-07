@@ -1,11 +1,10 @@
-import React, { Component, Fragment, useState, useContext } from 'react'
+import React, { useState } from 'react'
 import './styles/leftmenu.css'
 import TransitionListmenucomponent from './transitionListmenucomponent'
-import { Context } from './context'
+
 
 const ItemsSlideBar = () => {
 
-    const [OpenMenu, setOpenMenu] = useState(false)
     const menuArr = [{
         item_titel: 'Сведения об ОО',
         item_link: "#",
@@ -132,10 +131,8 @@ const ItemsSlideBar = () => {
     }, {
         item_titel: 'Внеучебная деятельность',
         item_link: "#",
-        subitems: [{
-            subitem_title: "Новости",
-            subitem_link: "#"
-        }, {
+        subitems: [
+            {
             subitem_title: "Профилактика COVID-19",
             subitem_link: "/COVID-19"
         }, {
@@ -152,19 +149,19 @@ const ItemsSlideBar = () => {
             subitem_link: "/pobeda"
         }, {
             subitem_title: "О спорте ",
-            subitem_link: "#"
+            subitem_link: "/sport"
         }, {
             subitem_title: "Волонтеры ",
-            subitem_link: "#"
+            subitem_link: "/volonters"
         }, {
             subitem_title: "Территория возможностей",
             subitem_link: "#"
         }, {
             subitem_title: "Формула успеха ",
-            subitem_link: "#"
+            subitem_link: "/formula_uspeha"
         }, {
             subitem_title: "Музей связи ",
-            subitem_link: "#"
+            subitem_link: "/musey_svazy"
         }]
     },
     {

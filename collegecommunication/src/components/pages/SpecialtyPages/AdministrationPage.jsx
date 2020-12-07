@@ -58,17 +58,7 @@ const AdministrationPage = () => {
                     )}
                 </div>
                 <div className="content-container-teamplatesPages center"><SubAdministrationPage/></div>
-                <Viewer
-                    visible={visible}
-                    onClose={() => { setVisible(false); }}
-                    images={[srcForViewer]}
-                    rotatable={false}
-                    showTotal={false}
-                    drag={false}
-                    noImgDetails={true}
-                    noNavbar={true}
-
-                />
+                
             </Fragment>
 
 
