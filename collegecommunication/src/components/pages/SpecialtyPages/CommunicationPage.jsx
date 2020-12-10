@@ -11,9 +11,7 @@ const CommunicationPage = () => {
 
     const [CommunicationPageArr, setCommunicationPageArr] = useState([]);
     const [IsLoadded, setIsLoadded] = useState(false)
-    const [visible, setVisible] = useState(false);
-    const [srcForViewer, setSrcViewer] = useState('');
-    const [visible2, setVisible2] = useState(false);
+
     useEffect(() => {
         axios.get('http://localhost:8000/wp-json/wp/v2/ss-page')
             .then(res => {
@@ -24,59 +22,30 @@ const CommunicationPage = () => {
             .catch(err => console.log(err))
     }, [setCommunicationPageArr])
 
-    function openViewer({ currentTarget: el })  {
-        console.log(el)
-        const src = el.src;
-        const alt = el.alt;
-        setVisible(true);
-        setSrcViewer({ src, alt });
-    }
+
 
     function splitDescription(content) {
-        const el = document.createElement('div');
-        el.innerHTML = content;
-        Array.from(el.querySelectorAll('.wp-block-image')).forEach(child => {
-            const img = child.querySelector('img');
-            img.setAttribute('onClick', `${() => openViewer(el)}`);
-        })
-
-        return el.innerHTML.split('<div class="wp-block-group__inner-container">')
+        return content.split('<div class="wp-block-group__inner-container">')
     }
+
 
 
     if (IsLoadded === true) {
-        
+
 
         return (
             CommunicationPageArr.map((CommunicationPageArr) => <Fragment>
                 <h2 className="title-main">{CommunicationPageArr.title.rendered}</h2>
-                <div className="content-container-teamplatesPages">
-                    {splitDescription(CommunicationPageArr.content.rendered).map((span) =>
-                        <div className="text-block-wrapper">
-                            <span className="text-block-contentText" style={{"max-width":"444px"}} dangerouslySetInnerHTML={{ __html: span }}></span>
+                <div className="content-container-teamplatesPages center">
+                    <div className="content-container-teamplatesPages-wrapp">
+                        <div className="text-block-wrapper covid" style={{ "max-width": "1008px" }}>
+                            <span className="text-block-contentText" dangerouslySetInnerHTML={{ __html: CommunicationPageArr.content.rendered }} style={{ "list-style-type": "decimal" }}></span>
+                            <div className="photo-block"><img src={CommunicationPageArr.acf.img1.url} alt="" className="teamplete-photo" /><img src={CommunicationPageArr.acf.img2.url} alt="" className="teamplete-photo" /></div>
                         </div>
-                    )}
+                    </div>
                 </div>
-                <div className="content-container-teamplatesPages center"><SubCommunicationPage/></div>
-                <Viewer
-                    visible={visible}
-                    onClose={() => { setVisible(false); }}
-                    images={[srcForViewer]}
-                    rotatable={false}
-                    showTotal={false}
-                    drag={false}
-                    noImgDetails={true}
-                    noNavbar={true}
-
-                />
+                <SubCommunicationPage />
             </Fragment>
-
-
-
-
-
-
-
             )
 
         )

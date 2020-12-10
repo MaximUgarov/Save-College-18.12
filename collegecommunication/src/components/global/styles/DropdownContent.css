@@ -42,7 +42,6 @@
 .wp-block-table {
     text-align: left;
     width: 100%;
-    margin-top: -61px;
     background-color: #fff;
 }
 
@@ -93,8 +92,13 @@ div.dropDownContent-wrapper:nth-child(1) {
 
 .dropcontent-span {
     padding-bottom: 50px;
+    background-color: #fff;
+    box-shadow: 5px 5px 25px rgba(0, 0, 0, 0.1);
+    border-radius: 30px;
+    margin-bottom: 51px;
+    margin-top: -60px;
 }
 
-.dropcontent-span>p {
-    padding-left: 48px;
+.dropcontent-span > p {
+    padding-left: 3rem;
 }

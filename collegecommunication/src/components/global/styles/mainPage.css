@@ -45,6 +45,9 @@
     width: 273.83px;
     height: 55px;
     border-radius: 17px;
+    align-items: center;
+    display: flex;
+    justify-content: center;
 }
 
 .slide-text {
@@ -70,11 +73,13 @@
 } */
 .slick-slide.slick-center {
     transform: scale(1.1);
+    transition: all 1.5s ease-in;
 
 }
 
 .slick-slide {
     transform: scale(0.9);
+    transition: all 1.2s ease-in;
 
 }
 

@@ -304,6 +304,15 @@ button {
   color: #000000;
   margin-bottom: 20px;
 }
+.text-block-contentText > ol, li {
+  list-style-type: decimal;
+
+}
+
+.text-block-contentText>p {
+  margin-bottom: 15px;
+  margin-top: 5px;
+}
 
 .text-block-subContainer {
   display: flex;
@@ -713,7 +722,9 @@ td {
   margin-top: -60px;
 }
 
-.text-block-wrapper:empty, .text-block-contentText:empty,.wp-block-group:empty {
+.text-block-wrapper:empty,
+.text-block-contentText:empty,
+.wp-block-group:empty {
 
   display: none;
 
@@ -721,4 +732,16 @@ td {
 
 th {
   padding: 1rem
+}
+
+.photo-block {
+  width: 100%;
+  display: flex;
+  justify-content: space-between;
+}
+
+.teamplete-photo {
+  max-width: 444px;
+  max-height: 333px;
+  width: 100%;
 }

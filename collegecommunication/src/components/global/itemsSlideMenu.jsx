@@ -175,50 +175,50 @@ const ItemsSlideBar = () => {
             subitem_link: "/reception"
         }, {
             subitem_title: "Ссылки",
-            subitem_link: "#"
+            subitem_link: "/links"
         }, {
             subitem_title: "РУМО",
-            subitem_link: "#"
+            subitem_link: "/mo"
         }
             , {
             subitem_title: "Выпускникам",
-            subitem_link: "#"
+            subitem_link: "/vipusknik"
         }
             , {
             subitem_title: "Работодателям",
-            subitem_link: "#"
+            subitem_link: "/rabotodatel"
         }
             , {
             subitem_title: "Город профессионалов",
-            subitem_link: "#"
+            subitem_link: "/gorodprof"
         }
             , {
             subitem_title: "Противодействие коррупции",
-            subitem_link: "#"
+            subitem_link: "/corrupt"
         }
             , {
             subitem_title: "Бесплатная юридическая помощь",
-            subitem_link: "#"
+            subitem_link: "/justece"
         }
             , {
             subitem_title: "Телефон доверия",
-            subitem_link: "#"
+            subitem_link: "/teldov"
         }
             , {
             subitem_title: "Детский телефон доверия",
-            subitem_link: "#"
+            subitem_link: "/detski-teldov"
         }
             , {
             subitem_title: "Антитеррор и пожарная безопасность",
-            subitem_link: "#"
+            subitem_link: "/antiterror"
         }
             , {
             subitem_title: "Информационная безопасность",
-            subitem_link: "#"
+            subitem_link: "/information_security"
         }
             , {
             subitem_title: "Инклюзивное образование",
-            subitem_link: "#"
+            subitem_link: "/invalid"
         }
         ]
     }

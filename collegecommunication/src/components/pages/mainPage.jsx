@@ -7,10 +7,7 @@ import MainPageNews from './subPagesComponents/mainPageNews';
 import Loading from '../global/Loading';
 
 import Slider from 'react-slick';
-
-
-
-
+import { Link } from 'react-router-dom';
 
 
 export class MainPage extends Component {
@@ -32,18 +29,6 @@ export class MainPage extends Component {
 
     render() {
         const { slideItems, isLoaded } = this.state
-        // console.log(slideItems)
-        // let settings = {
-        //     centerMode: true,
-        //     centerPadding: 400,
-        //     duration: 500,
-        //     onResize: (e) => {
-        //         settings = {
-        //             centerMode: false,
-        //             duration: 500,
-        //         }
-        //     }
-        // };
 
         var settings = {
             centerMode: true,
@@ -52,7 +37,7 @@ export class MainPage extends Component {
             slidesToScroll: 1,
             dots: false,
             infinite: true,
-            speed: 1000,
+            speed: 2000,
             arrows: true,
             responsive: [
                 {
@@ -131,7 +116,7 @@ export class MainPage extends Component {
                                             <div className="slide-text-wrapper">
                                                 <h2 className="slide-text__title">{slideItems.title.rendered}</h2>
                                                 <span className="slide-text__text" dangerouslySetInnerHTML={{ __html: slideItems.content.rendered }} />
-                                                <button className="slide-text__btn">Подробнее...</button>
+                                                <Link className="slide-text__btn" to={slideItems.acf.link}>Подробнее...</Link>
                                             </div>
                                         </div>
                                     </div>

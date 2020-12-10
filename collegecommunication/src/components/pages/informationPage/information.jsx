@@ -9,6 +9,7 @@ import InformationPageHistory from './subComponents/informationPageHistory'
 import InformationPageFounderInfo from './subComponents/informationPageFounderInfo'
 import Loading from '../../global/Loading'
 
+
 const InformationPage = () => {
 
 

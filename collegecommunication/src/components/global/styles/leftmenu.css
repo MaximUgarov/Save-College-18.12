@@ -158,6 +158,7 @@
     align-items: flex-start;
     margin-top: 54px;
     position: relative;
+    max-width: 254px;
 }
 
 .menu-sublist__el.active::after {

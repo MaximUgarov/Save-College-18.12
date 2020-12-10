@@ -1,15 +1,17 @@
-import React, { Fragment, useEffect, useState } from 'react'
+import React, { Fragment, useEffect, useState, useContext } from 'react'
 import axios from 'axios'
 import Loading from '../../global/Loading';
+import { Context } from '../../../context'
 
 
 const ParentPage = () => {
 
     const [ParentPageArr, setParentPageArr] = useState([]);
     const [IsLoadded, setIsLoadded] = useState(false)
+    const { url }= useContext(Context)
 
     useEffect(() => {
-        axios.get('http://localhost:8000/wp-json/wp/v2/Parent-page')
+        axios.get(`${url}/wp-json/wp/v2/Parent-page`)
             .then(res => {
                 const arr = res.data
                 setParentPageArr(arr)

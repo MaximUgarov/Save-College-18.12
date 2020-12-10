@@ -32,29 +32,34 @@ const SubAdministrationPage = () => {
 
     if (IsLoadded === true) {
         return (
-            SubAdministrationPageArr.map((SubAdministrationPageArr) =>
+           
                 <Fragment>
-                    <div className="dropdownContent-content">
-                        <div className="dropDownContent-wrapper" style={{"min-height": "100px"}} onClick={() => setIsDropContent1(!IsDropContent1)}>
-                            <span className="dropDownContent-title">Совет учреждения</span>
-                            <img src={arrow} className={IsDropContent1 ? "dropDownContent-arrowBtn active" : "dropDownContent-arrowBtn"} />
+                    <div className="content-container-teamplatesPages center">
+                        <div className="dropdownContent-content" style={{ "margin-top": "50px" }}>
+                            <div className="dropDownContent-wrapper" style={{ "min-height": "100px" }} onClick={() => setIsDropContent1(!IsDropContent1)}>
+                                <span className="dropDownContent-title">Совет учреждения</span>
+                                <img src={arrow} className={IsDropContent1 ? "dropDownContent-arrowBtn active" : "dropDownContent-arrowBtn"} />
+                            </div>
+                            {IsDropContent1 ? <DropContentAdministrationPage /> : null}
                         </div>
-                        {IsDropContent1 ? <DropContentAdministrationPage /> : null}
+                    </div>
+                    {SubAdministrationPageArr.map((SubAdministrationPageArr) =>
                         <Fragment>
-                            <div className="content-container-teamplatesPages" style={{"flex-wrap": "wrap"}}>
-                                {splitDescription(SubAdministrationPageArr.content.rendered).map((span) =>
-                                    <div className="text-block-wrapper">
-                                        <span className="text-block-contentText" style={{ "max-width": "444px" }} dangerouslySetInnerHTML={{ __html: span }}></span>
-                                    </div>
-                                )}
+                            <h2 className="title-main">{SubAdministrationPageArr.title.rendered}</h2>
+                            <div className="content-container-teamplatesPages">
+                                <span className="text-block-contentText" dangerouslySetInnerHTML={{ __html: SubAdministrationPageArr.content.rendered }} style={{ "text-align": "left" }} />
                             </div>
                         </Fragment>
-                        <Link to={SubAdministrationPageArr.acf.link_to_federal} className="teamplete-link">Информация об использовании при реализации образовательных программ электронного обучения и дистанционных образовательных технологий</Link>
-                        <Link to="/nabor" className="teamplete-link">Вернуться к списку общеобразовательных программ</Link>
+                    )}
+                    <div className="content-container-teamplatesPages">
+                    <div className="links" style={{ "max-width": "444px", "text-align": "left" }}>
+                        <Link to="/inform_ob_isp" className="teamplete-link">Информация об использовании при реализации образовательных программ электронного обучения и дистанционных образовательных технологий</Link><br /><br />
+                        <Link to="/nabor" className="teamplete-link">Вернуться Назад</Link>
                     </div>
+                </div>
                 </Fragment>
             )
-        )
+        
     }
 
     return (
