@@ -55,7 +55,7 @@ const Navbar = () => {
                 <menu className="navbar-links-wrapper">
 
                     <li style={{"list-style-type":"none"}}><Link to="/info" className="navbar__links">Сведения об ОО</Link></li>
-                    <li className="navbar__links" onClick={() => setSchedulePopUp(!SchedulePopUp)} style={{"list-style-type":"none"}}>Раписание <img src={openArrowPopup} alt="стрелка открытия всплывающего окна" />
+                    <li className="navbar__links" onClick={() => setSchedulePopUp(!SchedulePopUp)} style={{"list-style-type":"none", "display":"flex","flex-wrap":"nowrap","word-wrap":"brake"}}>Раписание <img src={openArrowPopup} alt="стрелка открытия всплывающего окна" style={{"margin-left":"20px"}}/>
                         <div className={SchedulePopUp ? "schedule-block active" : "schedule-block"}>
                             <a className="schedule-link" href="http://rasp.kolledgsvyazi.ru/spo.pdf">1 корпус</a>
                             <a className="schedule-link" href="http://rasp.kolledgsvyazi.ru/npo.pdf">2 корпус</a>

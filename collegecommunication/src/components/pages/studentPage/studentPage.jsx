@@ -6,7 +6,7 @@ const StudentPage = () => {
 
     const [StudentPageArr, setStudentPageArr] = useState([]);
     const [IsLoadded, setIsLoadded] = useState(false)
-    const { url }= useContext(Context)
+    const { url } = useContext(Context)
     useEffect(() => {
         axios.get(`${url}/wp-json/wp/v2/Student-page`)
             .then(res => {
@@ -27,10 +27,10 @@ const StudentPage = () => {
             StudentPageArr.map((StudentPageArr) =>
                 <Fragment>
                     <h2 className="title-main">{StudentPageArr.title.rendered}</h2>
-                    <div className="content-container-teamplatesPages"> 
-                        <div>
+                    <div className="content-container-teamplatesPages center">
+                        <div className="content-container-teamplatesPages-wrapp">
                             {splitDescription(StudentPageArr.content.rendered).map((span) =>
-                                <div className="text-block-wrapper">
+                                <div className="text-block-wrapper covid" style={{ "max-width": "700px" }}>
                                     <span className="text-block-contentText" dangerouslySetInnerHTML={{ __html: span }} />
                                 </div>
                             )}
@@ -42,7 +42,7 @@ const StudentPage = () => {
         )
     }
     return (
-        <Loading/>
+        <Loading />
     )
 }
 export default StudentPage

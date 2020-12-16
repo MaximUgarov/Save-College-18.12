@@ -12,7 +12,6 @@ const MainPageNews = () => {
                 <div className="news-grid-wrapper">
                     <SubMainPageNewsArr></SubMainPageNewsArr>
                 </div>
-                <button className="news-archive__btn">Архив новостей</button>
             </div>
         </Fragment>
     )

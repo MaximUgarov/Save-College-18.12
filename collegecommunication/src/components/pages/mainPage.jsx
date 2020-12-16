@@ -100,6 +100,7 @@ export class MainPage extends Component {
                         slidesToShow: 1,
                         slidesToScroll: 1,
                         centerPadding: 0,
+                        speed: 1000,
                     },
 
 

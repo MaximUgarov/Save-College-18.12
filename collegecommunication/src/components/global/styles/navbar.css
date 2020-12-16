@@ -68,7 +68,6 @@
 
 .schedule-block.active {
     width: 246px;
-    height: 171px;
     background: #FFFFFF;
     box-shadow: 5px 5px 25px rgba(0, 0, 0, 0.1);
     border-radius: 25px;
@@ -80,12 +79,10 @@
     top: 35px;
     z-index: 9;
     height: auto;
-    padding-bottom: 21px;
+    justify-content: center;
 }
 
 .schedule-link {
-    margin-left: 50px;
-    margin-top: 40px;
     font-family: Montserrat;
     font-style: normal;
     font-weight: 500;
@@ -93,7 +90,8 @@
     line-height: 19px;
     color: #000000;
     text-align: left;
-
+    padding: 1.5rem;
+    padding-left: 3rem;
 }
 
 .navbar-partners-block-wrapper {
@@ -131,7 +129,12 @@
         flex-wrap: nowrap;
         align-items: center;
     }
-
+    li.navbar__links {
+        display: flex;
+        word-wrap: break-word;
+        flex-wrap: nowrap;
+        align-items: center;
+    }
     li.navbar__links>img:nth-child(1) {
         width: 14px;
         margin-left: 6px;
@@ -143,10 +146,10 @@
 
     .mobile-nav-btn__rasp,
     .mobile-nav-btn__burger {
-        width: 23px!important;
+        width: 23px !important;
     }
 
     .mobile-nav-btn__rasp {
-        margin-right: 26px!important;
+        margin-right: 26px !important;
     }
 }

@@ -1,20 +1,21 @@
 import React from 'react';
 import ReactDOM from 'react-dom';
 
-import { BrowserRouter } from "react-router-dom"
-import {createBrowserHistory} from 'history'
+import { HashRouter  } from "react-router-dom"
+import {createHashHistory} from 'history'
+
 
 
 import './index.css';
 import App from './App.jsx';
 import reportWebVitals from './reportWebVitals';
 
-const history = createBrowserHistory()
+const history = createHashHistory()
 
 ReactDOM.render((
-  <BrowserRouter history={history}>
+  <HashRouter  history={history}>
        <App/>
-     </BrowserRouter>),
+     </HashRouter >),
   document.getElementById('root')
 );
 

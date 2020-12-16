@@ -113,7 +113,7 @@ class App extends Component {
     return (
 
       <Context.Provider value={{
-        url:"http://localhost:8000"}}>
+        url:"http://192.168.100.37:8000/"}}>
 
         <div className="App">
           {this.state.width > 1100 ? <SlideBar></SlideBar> : null}

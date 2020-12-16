@@ -13,7 +13,8 @@ const BooksPage = () => {
     const [BooksArr, setBooksArr] = useState([]);
     const [IsLoadded, setIsLoadded] = useState(false)
     const { url }= useContext(Context)
-    useEffect(() => {
+
+        useEffect(() => {
         axios.get(`${url}/wp-json/wp/v2/electron_libraries`)
             .then(res => {
                 const arr = res.data
@@ -23,13 +24,14 @@ const BooksPage = () => {
             })
             .catch(err => console.log(err))
     }, [setBooksArr])
+
 if(IsLoadded === true) {
     return (
         <Fragment>
             <h2 className="title-main">Электронные библиотеки</h2>
             <div className="news-container">
                 <div className="news-grid-wrapper">
-                    {BooksArr.map((BooksArr) => <div className={BooksArr.acf.importance ? "card-main main" : "card-main"}>
+                    {BooksArr.map((BooksArr) => <div className={BooksArr.acf.importance ? "card-main main" : "card-main"} style={{"max-height":"600px"}}>
                         <div className={BooksArr.acf.importance ? "card-main-wrapper main" : "card-main-wrapper"}>
                             <div className={BooksArr.acf.importance ? "card-main-text-wrapper main" : "card-main-text-wrapper"}>
                                 <h3 className={BooksArr.acf.importance ? "card-main__title main" : "card-main__title"}>{BooksArr.title.rendered}</h3>

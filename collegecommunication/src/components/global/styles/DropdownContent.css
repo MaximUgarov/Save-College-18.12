@@ -65,7 +65,7 @@ div.dropDownContent-wrapper:nth-child(1) {
 }
 
 .wp-block-table>table:nth-child(1) {
-    width: 99%;
+    width: 100%;
     border-collapse: collapse;
     margin: 0 auto;
 }
@@ -77,6 +77,10 @@ div.dropDownContent-wrapper:nth-child(1) {
 
 .dropcontent-span {
     text-align: left;
+}
+
+.wp-block-group__inner-container>p:nth-child(1) {
+    padding-left: 3rem;
 }
 
 .dropcontent-span p {
@@ -94,11 +98,31 @@ div.dropDownContent-wrapper:nth-child(1) {
     padding-bottom: 50px;
     background-color: #fff;
     box-shadow: 5px 5px 25px rgba(0, 0, 0, 0.1);
-    border-radius: 30px;
     margin-bottom: 51px;
-    margin-top: -60px;
+    margin-top: -72px;
+    border-radius: 0px 0px 30px 30px;
 }
 
-.dropcontent-span > p {
+.dropcontent-span>p {
     padding-left: 3rem;
+}
+
+@media all and (max-width: 600px) {
+    .dropDownContent-wrapper {
+        padding-left: 28px;
+        padding-right: 35px;
+        border-radius: 0;
+    }
+
+    .dropDownContent-title {
+        font-family: Montserrat;
+        font-style: normal;
+        font-weight: 600;
+        font-size: 16.05px;
+        line-height: 20px;
+        color: #000000;
+    }
+    .dropcontent-span {
+        border-radius: 0;
+    }
 }

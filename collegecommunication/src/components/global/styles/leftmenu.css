@@ -244,3 +244,15 @@
     transform: rotate(90deg);
     margin-right: 47px;
 }
+
+@media all and (max-width: 420px) {
+    .mobile-menu-sublist__el.active {
+        margin-left: 22px;
+    }
+    .mobile-menu-list__elTitle {
+        padding-left: 22px;
+    }
+    .mobile-menu-sublist__elTitle {
+        text-align: left;
+    }
+}

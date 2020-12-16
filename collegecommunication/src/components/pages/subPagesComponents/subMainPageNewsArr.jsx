@@ -39,7 +39,7 @@ const SubMainPageNewsArr = () => {
         let WindowWidth = window.innerWidth
         if (WindowWidth > 1000) {
             return (
-                NewsArr.map((NewsArr) => <div className={NewsArr.acf.important_news ? "card-main main" : "card-main"} >
+                NewsArr.map((NewsArr) => <div className={NewsArr.acf.important_news ? "card-main main" : "card-main"} style={{"max-height":"450px"}}>
                     {NewsArr.acf.important_news ? <img src={importanceNews} alt="Пометка Важной новости" className="card-main__importanceNews"/> : null}
                     <div className={NewsArr.acf.important_news ? "card-main-wrapper main" : "card-main-wrapper"}>
                         <div className={NewsArr.acf.important_news ? "card-main-text-wrapper main" : "card-main-text-wrapper"}>
