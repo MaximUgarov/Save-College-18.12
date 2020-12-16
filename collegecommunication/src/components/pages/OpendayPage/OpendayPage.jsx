@@ -1,14 +1,15 @@
-import React, { Fragment, useEffect, useState } from 'react'
+import React, { Fragment, useEffect, useState, useContext } from 'react'
 import axios from 'axios'
 import Loading from '../../global/Loading';
+import { Context } from '../../../context'
 const OpendayPage = () => {
 
 
     const [OpendayPageArr, setOpendayPageArr] = useState([]);
     const [IsLoadded, setIsLoadded] = useState(false)
-
+    const { url } = useContext(Context)
     useEffect(() => {
-        axios.get('http://localhost:8000/wp-json/wp/v2/openday-page')
+        axios.get(`${url}/wp-json/wp/v2/openday-page`)
             .then(res => {
                 const arr = res.data
                 setOpendayPageArr(arr)
@@ -29,12 +30,12 @@ const OpendayPage = () => {
                 <h2 className="title-main">{OpendayPageArr.title.rendered}</h2>
                 <div className="content-container-teamplatesPages center">
                     <div className="content-container-teamplatesPages-wrapp">
-                    {splitDescription(OpendayPageArr.content.rendered).map((span) =>
-                        <div className="text-block-wrapper covid">
-                            <span className="text-block-contentText" dangerouslySetInnerHTML={{ __html: span }} />
-                        </div>
-                    )}
-                </div>
+                        {splitDescription(OpendayPageArr.content.rendered).map((span) =>
+                            <div className="text-block-wrapper covid">
+                                <span className="text-block-contentText" dangerouslySetInnerHTML={{ __html: span }} />
+                            </div>
+                        )}
+                    </div>
                 </div>
             </Fragment>
             )
@@ -42,7 +43,7 @@ const OpendayPage = () => {
         )
     }
     return (
-        <Loading/>
+        <Loading />
     )
 }
 

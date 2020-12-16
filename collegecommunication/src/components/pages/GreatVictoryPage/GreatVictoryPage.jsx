@@ -1,15 +1,15 @@
-import React, { Fragment, useEffect, useState } from 'react'
+import React, { Fragment, useEffect, useState, useContext } from 'react'
 import axios from 'axios'
 import Loading from '../../global/Loading';
-
+import { Context } from '../../../context'
 
 const GreatVictoryPage = () => {
 
     const [GreatVictoryPageArr, setGreatVictoryPageArr] = useState([]);
     const [IsLoadded, setIsLoadded] = useState(false)
-
+    const { url } = useContext(Context)
     useEffect(() => {
-        axios.get('http://localhost:8000/wp-json/wp/v2/vov-page')
+        axios.get(`${url}/wp-json/wp/v2/vov-page`)
             .then(res => {
                 const arr = res.data
                 setGreatVictoryPageArr(arr)
@@ -39,7 +39,7 @@ const GreatVictoryPage = () => {
         )
     }
     return (
-        <Loading/>
+        <Loading />
     )
 }
 export default GreatVictoryPage

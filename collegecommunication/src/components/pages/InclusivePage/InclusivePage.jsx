@@ -25,15 +25,7 @@ const InclusivePage = () => {
 
 
 
-    // function splitDescription(content) {
-    //     const el = document.createElement('div');
-    //     el.innerHTML = content;
-    //     el.querySelectorAll('a').forEach(a => {
-    //         a.addEventListener('click', (event) => {
-    //             event.preventDefault()
-    //             const href = a.getAttribute('href');})
-    //     })
-    // }
+
     function splitDescription(content) {
         return content.split('<div class="wp-block-group__inner-container">')
     }

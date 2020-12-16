@@ -54,17 +54,17 @@ const Navbar = () => {
                 </div>
                 <menu className="navbar-links-wrapper">
 
-                    <li><Link to="/info" className="navbar__links">Сведения об ОО</Link></li>
-                    <li className="navbar__links" onClick={() => setSchedulePopUp(!SchedulePopUp)}>Раписание <img src={openArrowPopup} alt="стрелка открытия всплывающего окна" />
+                    <li style={{"list-style-type":"none"}}><Link to="/info" className="navbar__links">Сведения об ОО</Link></li>
+                    <li className="navbar__links" onClick={() => setSchedulePopUp(!SchedulePopUp)} style={{"list-style-type":"none"}}>Раписание <img src={openArrowPopup} alt="стрелка открытия всплывающего окна" />
                         <div className={SchedulePopUp ? "schedule-block active" : "schedule-block"}>
                             <a className="schedule-link" href="http://rasp.kolledgsvyazi.ru/spo.pdf">1 корпус</a>
                             <a className="schedule-link" href="http://rasp.kolledgsvyazi.ru/npo.pdf">2 корпус</a>
                         </div>
                     </li>
-                    <li><Link to="/students" className="navbar__links">Студенту</Link></li>
-                    <li><Link to="/roditeli" className="navbar__links">Родителям</Link></li>
-                    <li><Link to="/abiturient" className="navbar__links">Абитуриенту</Link></li>
-                    <li><a href="http://moodle.kolledgsvyazi.ru:808/" className="navbar__links">Дистанционное обучение</a></li>
+                    <li style={{"list-style-type":"none"}}><Link to="/students" className="navbar__links">Студенту</Link></li>
+                    <li style={{"list-style-type":"none"}}><Link to="/roditeli" className="navbar__links">Родителям</Link></li>
+                    <li style={{"list-style-type":"none"}}><Link to="/abiturient" className="navbar__links">Абитуриенту</Link></li>
+                    <li style={{"list-style-type":"none"}}><a href="http://moodle.kolledgsvyazi.ru:808/" className="navbar__links">Дистанционное обучение</a></li>
                 </menu>
             </div>
         </Fragment>

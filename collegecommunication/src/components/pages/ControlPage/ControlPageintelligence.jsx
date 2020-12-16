@@ -1,16 +1,16 @@
-import React, { Fragment, useEffect, useState } from 'react'
+import React, { Fragment, useEffect, useState, useContext } from 'react'
 import axios from 'axios'
 import Loading from '../../global/Loading';
-import SubControlPage from './subComponents/subControlPageBlock'
-import DropdownContent from './subComponents/DropdownContent';
+import { Context } from '../../../context'
 
 const ControlPageintelligence = () => {
 
     const [ControlPageArr, setControlPageArr] = useState([]);
     const [IsLoadded, setIsLoadded] = useState(false)
+    const { url }= useContext(Context)
 
     useEffect(() => {
-        axios.get('http://localhost:8000/wp-json/wp/v2/Control-sub-page')
+        axios.get(`${url}/wp-json/wp/v2/Control-sub-page`)
             .then(res => {
                 const arr = res.data
                 setControlPageArr(arr)

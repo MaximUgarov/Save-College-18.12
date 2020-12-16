@@ -1,11 +1,11 @@
-import React, { Fragment, useEffect, useState } from 'react'
+import React, { Fragment, useEffect, useState, useContext  } from 'react'
 import axios from 'axios'
 import { Link } from 'react-router-dom';
 import arrow from '../../../img/dropDownContent.svg'
 import '../../../global/styles/DropdownContent.css'
 import DropContentDocumentationpage from './dropDownContent/DropContentDocumentationpage';
 import Loading from '../../../global/Loading';
-import { BrowserRouter } from 'react-router-dom'
+import { Context } from '../../../../context'
 
 
 const SubDocumentationpage = () => {
@@ -13,10 +13,10 @@ const SubDocumentationpage = () => {
     const [SubDocumentationpageArr, setSubDocumentationpageArr] = useState([]);
     const [IsLoadded, setIsLoadded] = useState(false)
     const [IsDropContent1, setIsDropContent1] = useState(false)
-
+    const { url }= useContext(Context)
 
     useEffect(() => {
-        axios.get('http://localhost:8000/wp-json/wp/v2/sub-content-do_page')
+        axios.get(`${url}/wp-json/wp/v2/sub-content-do_page`)
             .then(res => {
                 const arr = res.data
                 setSubDocumentationpageArr(arr)

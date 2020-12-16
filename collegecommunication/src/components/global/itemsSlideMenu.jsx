@@ -169,7 +169,7 @@ const ItemsSlideBar = () => {
         item_link: "#",
         subitems: [{
             subitem_title: "Трудоустройство ",
-            subitem_link: "#"
+            subitem_link: "/trudoustroistvo"
         }, {
             subitem_title: "Директор ON-Line",
             subitem_link: "/reception"

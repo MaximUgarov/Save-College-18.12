@@ -1,28 +1,25 @@
-import React, { Fragment, useEffect, useState } from 'react'
+import React, {  useEffect, useState, useContext } from 'react'
 import axios from 'axios'
 import '../../../components/global/styles/informationPage.css'
-import mapImg from '../../img/map__informationPage.svg'
-import tbus_icon from '../../img/tbus_icon.svg'
-import bus_icon from '../../img/bus_icon.svg'
 import InformationPageContactInfo from './subComponents/informationPageContactInfo'
 import InformationPageHistory from './subComponents/informationPageHistory'
 import InformationPageFounderInfo from './subComponents/informationPageFounderInfo'
 import Loading from '../../global/Loading'
-
+import { Context } from '../../../context'
 
 const InformationPage = () => {
 
 
     const [InformationPageArr, setInformationPageArr] = useState([]);
     const [IsLoadded, setIsLoadded] = useState(false)
+    const { url } = useContext(Context)
 
     useEffect(() => {
-        axios.get('http://localhost:8000/wp-json/wp/v2/information-page')
+        axios.get(`${url}/wp-json/wp/v2/information-page`)
             .then(res => {
                 const arr = res.data
                 setInformationPageArr(arr)
                 setIsLoadded(true)
-                console.log(InformationPageArr)
             })
             .catch(err => console.log(err))
     }, [setInformationPageArr])
@@ -51,8 +48,8 @@ const InformationPage = () => {
 
         )
     }
-    return(
-        <Loading/>
+    return (
+        <Loading />
     )
 }
 

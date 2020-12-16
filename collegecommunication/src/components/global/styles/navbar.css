@@ -138,3 +138,15 @@
     }
 
 }
+
+@media all and (max-width: 410px) {
+
+    .mobile-nav-btn__rasp,
+    .mobile-nav-btn__burger {
+        width: 23px!important;
+    }
+
+    .mobile-nav-btn__rasp {
+        margin-right: 26px!important;
+    }
+}

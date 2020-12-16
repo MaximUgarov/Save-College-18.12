@@ -1,16 +1,17 @@
-import React, { Fragment, useEffect, useState } from 'react'
+import React, { Fragment, useEffect, useState, useContext } from 'react'
 import { withRouter } from 'react-router'
 import axios from 'axios'
 import Loading from '../../../global/Loading';
+import { Context } from '../../../../context'
 
 const FormulaSuccessPageMembers = (props) => {
 
 
     const [FormulaSuccessPageArr, setFormulaSuccessPageArr] = useState([]);
     const [Isloadded, setIsloadded] = useState(false)
-
+    const { url } = useContext(Context)
     useEffect(() => {
-        axios.get(`http://localhost:8000/wp-json/wp/v2/formula-page/${props.match.params.id}`)
+        axios.get(`${url}/wp-json/wp/v2/formula-page/${props.match.params.id}`)
             .then(res => {
                 const arr = res.data
                 setFormulaSuccessPageArr(arr)
@@ -29,15 +30,15 @@ const FormulaSuccessPageMembers = (props) => {
                         <span className="text-block-contentText" dangerouslySetInnerHTML={{ __html: FormulaSuccessPageArr.content.rendered }} />
                     </div>
                     <div className="text-block-wrapper">
-                    <img src={FormulaSuccessPageArr.acf.image_member1.url} alt="" style={{"width":"100%", "max-width":"444px", "margin-bottom":"20px"}}/>
-                    <img src={FormulaSuccessPageArr.acf.image_member2.url} alt="" style={{"width":"100%", "max-width":"444px"}}/>
+                        <img src={FormulaSuccessPageArr.acf.image_member1.url} alt="" style={{ "width": "100%", "max-width": "444px", "margin-bottom": "20px" }} />
+                        <img src={FormulaSuccessPageArr.acf.image_member2.url} alt="" style={{ "width": "100%", "max-width": "444px" }} />
                     </div>
                 </div>
             </Fragment>
         )
     }
     return (
-        <Loading/>
+        <Loading />
     )
 }
 export default withRouter(FormulaSuccessPageMembers)

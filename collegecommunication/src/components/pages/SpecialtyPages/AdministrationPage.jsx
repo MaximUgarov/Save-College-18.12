@@ -1,9 +1,9 @@
 
-import React, { Fragment, useEffect, useState } from 'react'
+import React, { Fragment, useEffect, useState, useContext } from 'react'
 import axios from 'axios'
 import '../../../components/global/styles/Covid-19.css'
 import Loading from '../../global/Loading';
-import Viewer from 'react-viewer';
+import { Context } from '../../../context'
 import '../../global/styles/SpecialPages.css'
 import SubAdministrationPage from './SubAdministrationPage/subAdministrationPage';
 const AdministrationPage = () => {
@@ -11,10 +11,10 @@ const AdministrationPage = () => {
 
     const [AdministrationPageArr, setAdministrationPageArr] = useState([]);
     const [IsLoadded, setIsLoadded] = useState(false)
-
+    const { url }= useContext(Context)
 
     useEffect(() => {
-        axios.get('http://localhost:8000/wp-json/wp/v2/sis_page')
+        axios.get(`${url}/wp-json/wp/v2/sis_page`)
             .then(res => {
                 const arr = res.data
                 setAdministrationPageArr(arr)

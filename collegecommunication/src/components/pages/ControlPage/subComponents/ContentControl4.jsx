@@ -1,17 +1,17 @@
-import React, { Fragment, useEffect, useState } from 'react'
+import React, { Fragment, useEffect, useState, useContext } from 'react'
 import axios from 'axios'
 import Loading from '../../../global/Loading';
-import { Link } from 'react-router-dom';
-import arrow from '../../../img/dropDownContent.svg'
+import { Context } from '../../../../context'
 import '../../../global/styles/DropdownContent.css'
 
 const DropdownContentBlock4 = () => {
 
     const [ControlPageArr, setControlPageArr] = useState([]);
     const [IsLoadded, setIsLoadded] = useState(false)
+    const { url } = useContext(Context)
 
     useEffect(() => {
-        axios.get('http://localhost:8000/wp-json/wp/v2/Control-content-sub4')
+        axios.get(`${url}/wp-json/wp/v2/Control-content-sub4`)
             .then(res => {
                 const arr = res.data
                 setControlPageArr(arr)

@@ -226,3 +226,10 @@
         right: 54px;
     }
 }
+@media all and (max-width: 470px) {
+    .slide-text__btn {
+        width: 138.83px;
+        height: 23px;
+        min-height: 40px;
+    }
+}

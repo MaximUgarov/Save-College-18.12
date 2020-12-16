@@ -1,17 +1,18 @@
-import React, { Fragment, useEffect, useState } from 'react'
+import React, { Fragment, useEffect, useState, useContext  } from 'react'
 import { Context } from '../../../context'
-import { Link } from 'react-router-dom'
 import axios from 'axios'
 import Loading from '../../global/Loading'
+
 
 
 const DemoexamPage = () => {
 
     const [DemoexamPageArr, setDemoexamPageArr] = useState([]);
     const [IsLoadded, setIsLoadded] = useState(false)
+    const { url }= useContext(Context)
 
     useEffect(() => {
-        axios.get('http://localhost:8000/wp-json/wp/v2/demoexam-page')
+        axios.get(`${url}/wp-json/wp/v2/demoexam-page`)
             .then(res => {
                 const arr = res.data
                 setDemoexamPageArr(arr)

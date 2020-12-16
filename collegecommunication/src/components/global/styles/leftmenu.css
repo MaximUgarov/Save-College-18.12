@@ -70,6 +70,7 @@
     line-height: 19px;
     color: #FFFFFF;
     cursor: pointer;
+    list-style-type: none;
 }
 
 .mobile-menu-list__elTitle {
@@ -89,6 +90,7 @@
     padding-right: 37px;
     justify-content: space-between;
     max-width: 503px;
+    list-style-type: none;
 }
 
 .arrowDonwBtn {
@@ -143,6 +145,7 @@
     max-width: 275px;
     text-align: left;
     position: relative;
+    list-style-type: none;
 }
 
 
@@ -179,6 +182,7 @@
     width: 24px;
     left: -35px;
     top: 10px;
+    list-style-type: none;
 }
 
 
@@ -208,6 +212,7 @@
     max-width: unset;
     justify-content: unset;
     margin-bottom: 62px;
+    list-style-type: none;
 }
 
 .mobile-menu-sublist__elTitle.active {
@@ -215,11 +220,15 @@
     height: auto;
     padding: 28px;
     margin-left: 0px;
+    list-style-type: none;
 }
+
 .mobile-menu-sublist__elTitle {
     margin-left: 0px;
     padding-bottom: 62px;
+    list-style-type: none;
 }
+
 .mobile-menu-sublist__el.active {
     margin-left: 62px;
     display: flex;
@@ -230,6 +239,7 @@
 .arrowDonwBtn__mobileNav {
     margin-left: 47px;
 }
+
 .arrowDonwBtn__mobileNav.active {
     transform: rotate(90deg);
     margin-right: 47px;

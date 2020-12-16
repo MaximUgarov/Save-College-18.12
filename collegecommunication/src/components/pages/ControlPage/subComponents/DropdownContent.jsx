@@ -1,4 +1,4 @@
-import React, { Fragment, useEffect, useState } from 'react'
+import React, { Fragment, useEffect, useState, useContext  } from 'react'
 import axios from 'axios'
 import Loading from '../../../global/Loading';
 import { Link } from 'react-router-dom';
@@ -8,6 +8,7 @@ import DropdownContentBlock from './ContentControl1'
 import DropdownContentBlock2 from './ContentControl2'
 import DropdownContentBlock3 from './ContentControl3'
 import DropdownContentBlock4 from './ContentControl4'
+import { Context } from '../../../../context'
 
 const DropdownContent = () => {
 
@@ -17,9 +18,10 @@ const DropdownContent = () => {
     const [IsDropContent2, setIsDropContent2] = useState(false)
     const [IsDropContent3, setIsDropContent3] = useState(false)
     const [IsDropContent4, setIsDropContent4] = useState(false)
+    const { url } = useContext(Context)
 
     useEffect(() => {
-        axios.get('http://localhost:8000/wp-json/wp/v2/Control-page-sub')
+        axios.get(`${url}/wp-json/wp/v2/Control-page-sub`)
             .then(res => {
                 const arr = res.data
                 setControlPageArr(arr)

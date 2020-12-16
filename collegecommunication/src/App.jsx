@@ -50,7 +50,7 @@ import InformationSecurity from './components/pages/SpecialtyPages/InformationSe
 import ProgrammingPage from './components/pages/SpecialtyPages/ProgrammingPage';
 import AdministrationPage from './components/pages/SpecialtyPages/AdministrationPage';
 import MaintenanceService from './components/pages/SpecialtyPages/MaintenanceService';
-import DocumentationPlatPage from './components/pages/SpecialtyPages/DocumentationPlatPage';
+// import DocumentationPlatPage from './components/pages/SpecialtyPages/DocumentationPlatPage';
 import ProgrammingPlatPage from './components/pages/SpecialtyPages/ProgrammingPlat';
 import SelectionCommitteePage from './components/pages/SelectionCommitteePage/SelectionCommitteePage';
 import ImplementationEducationalProgramsPage from './components/pages/ImplementationEducationalProgramsPage/ImplementationEducationalProgramsPage';
@@ -80,6 +80,7 @@ import CorruptionActs from './components/pages/CorruptionPage/subPages/Corruptio
 import MethodicalMaterial from './components/pages/CorruptionPage/subPages/MethodicalMaterial';
 import CorruptFeedback from './components/pages/CorruptionPage/subPages/CorruptFeedback';
 import InclusivePage from './components/pages/InclusivePage/InclusivePage';
+import MrPage from './components/pages/MrPage/MrPage';
 
 
 
@@ -158,7 +159,7 @@ class App extends Component {
               <Route path='/spisp' component={ProgrammingPage} />
               <Route path='/spks' component={AdministrationPage} />
               <Route path='/spto' component={MaintenanceService} />
-              <Route path='/spdo_zaoch' component={DocumentationPlatPage} />
+              {/* <Route path='/spdo_zaoch' component={DocumentationPlatPage} /> */}
               <Route path='/ndoc' component={SelectionCommitteePage} />
               <Route path='/aufgabe' component={StateAssignmentPage} />
               <Route path='/purchase' component={CustomPage} />
@@ -186,6 +187,7 @@ class App extends Component {
               <Route path='/corrupt_materials' component={MethodicalMaterial} />
               <Route path='/corrupt_feedback' component={CorruptFeedback} />
               <Route path='/invalid' component={InclusivePage} />
+              <Route path='/Mr/:id' component={MrPage} />
 
 
 
@@ -205,6 +207,11 @@ class App extends Component {
                 window.location.href = 'https://fond-detyam.ru/';
                 return null;
               }} />
+              <Route path='/trudoustroistvo' component={() => {
+                window.location.href = 'http://localhost:8000/wp-content/uploads/2020/12/trudoustroistvo1.pdf';
+                return null;
+              }} />
+
             </Switch>
           </div>
           {this.state.width > 900 ? <Footer></Footer> : null}

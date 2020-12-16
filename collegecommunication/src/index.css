@@ -253,7 +253,10 @@ button {
 }
 
 
-
+.slick-prev,
+.slick-next {
+    z-index: 999!important;
+}
 
 
 /* Новые шаблоны */

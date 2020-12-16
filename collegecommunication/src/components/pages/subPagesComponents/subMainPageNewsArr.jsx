@@ -1,18 +1,19 @@
-import React, { Fragment, useEffect, useState } from 'react'
+import React, { Fragment, useEffect, useState, useContext } from 'react'
 import axios from 'axios'
 import { Link } from "react-router-dom"
 import Loading from '../../global/Loading'
 import importanceNews from '../../img/importanceNews.svg'
-
+import { Context } from '../../../context'
 const SubMainPageNewsArr = () => {
 
 
 
     const [NewsArr, setNewsArr] = useState([]);
     const [Isloadded, setIsloadded] = useState(false)
+    const { url }= useContext(Context)
 
     useEffect(() => {
-        axios.get('http://localhost:8000/wp-json/wp/v2/main_page_news')
+        axios.get(`${url}/wp-json/wp/v2/main_page_news`)
             .then(res => {
                 const arr = res.data
                 setNewsArr(sort(arr))

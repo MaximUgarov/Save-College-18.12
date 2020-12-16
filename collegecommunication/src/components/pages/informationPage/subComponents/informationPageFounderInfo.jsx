@@ -1,16 +1,15 @@
-import React, { Fragment, useEffect, useState } from 'react'
+import React, { Fragment, useEffect, useState, useContext } from 'react'
 import axios from 'axios'
+import { Context } from '../../../../context'
 
-import mapImg from '../../../img/map__informationPage.svg'
-import tbus_icon from '../../../img/tbus_icon.svg'
-import bus_icon from '../../../img/bus_icon.svg'
 
 const InformationPageFounderInfo = () => {
 
     const [InformationPageArr, setInformationPageArr] = useState([]);
+    const { url }= useContext(Context)
 
     useEffect(() => {
-        axios.get('http://localhost:8000/wp-json/wp/v2/information-page-fou')
+        axios.get(`${url}/wp-json/wp/v2/information-page-fou`)
             .then(res => {
                 const arr = res.data
                 setInformationPageArr(arr)

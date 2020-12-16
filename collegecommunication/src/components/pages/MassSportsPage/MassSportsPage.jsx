@@ -1,15 +1,16 @@
-import React, { Fragment, useEffect, useState } from 'react'
+import React, { Fragment, useEffect, useState, useContext } from 'react'
 import axios from 'axios'
 import '../../../components/global/styles/Covid-19.css'
 import Loading from '../../global/Loading';
+import { Context } from '../../../context'
 const MassSportsPage = () => {
 
 
     const [MassSportsPageArr, setMassSportsPageArr] = useState([]);
     const [IsLoadded, setIsLoadded] = useState(false)
-
+    const { url }= useContext(Context)
     useEffect(() => {
-        axios.get('http://localhost:8000/wp-json/wp/v2/sport-page')
+        axios.get(`${url}/wp-json/wp/v2/sport-page`)
             .then(res => {
                 const arr = res.data
                 setMassSportsPageArr(arr)

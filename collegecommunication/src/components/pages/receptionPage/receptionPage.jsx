@@ -1,10 +1,10 @@
-import React, { Fragment, useState } from 'react'
+import React, { Fragment, useState, useContext } from 'react'
 import '../../global/styles/ReceptionPage.css'
 import ReceptionPageArr from './subcomponents/ReceptionPageArr'
 import axios from 'axios'
-
+import { Context } from '../../../context'
 const ReceptionPage = () => {
-
+    const { url }= useContext(Context)
     const [Data, setData] = useState({
         post: 1,
         author_name: "",
@@ -28,7 +28,7 @@ const ReceptionPage = () => {
        const handleSubmit = e => {
         e.preventDefault();
         let queryData = Object.entries(Data).map(([key, value]) => (`${key}=${value}`)).join('&');
-        axios.post(`http://localhost:8000/wp-json/wp/v2/comments`, { ...Data })
+        axios.post(`${url}/wp-json/wp/v2/comments`, { ...Data })
           .then(res => {
             console.log(Data);
           })

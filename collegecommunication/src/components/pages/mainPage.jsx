@@ -5,19 +5,24 @@ import '../global/styles/mainPage.css'
 // import Slider from 'infinite-react-carousel';
 import MainPageNews from './subPagesComponents/mainPageNews';
 import Loading from '../global/Loading';
-
+import { Context } from '../../context'
 import Slider from 'react-slick';
 import { Link } from 'react-router-dom';
 
 
 export class MainPage extends Component {
+    
+    static contextType = Context;
+
     state = {
         slideItems: [],
-        isLoaded: false
+        isLoaded: false,
+
     }
 
     componentDidMount() {
-        axios.get('http://localhost:8000/wp-json/wp/v2/main_page')
+
+        axios.get(`${this.context.url}/wp-json/wp/v2/main_page`)
             .then(res => this.setState({
                 slideItems: res.data,
                 isLoaded: true
@@ -55,8 +60,8 @@ export class MainPage extends Component {
                         centerPadding: "16%",
 
                     }
-                    
-                    
+
+
                 },
                 {
                     breakpoint: 1568,
@@ -65,8 +70,8 @@ export class MainPage extends Component {
                         centerPadding: "14%",
 
                     }
-                    
-                    
+
+
                 },
                 {
                     breakpoint: 1487,
@@ -75,8 +80,8 @@ export class MainPage extends Component {
                         centerPadding: "13%",
 
                     }
-                    
-                    
+
+
                 },
                 {
                     breakpoint: 1446,
@@ -85,8 +90,8 @@ export class MainPage extends Component {
                         slidesToShow: 1,
                         slidesToScroll: 1,
                     },
-                    
-                    
+
+
                 },
                 {
                     breakpoint: 1000,
@@ -96,8 +101,8 @@ export class MainPage extends Component {
                         slidesToScroll: 1,
                         centerPadding: 0,
                     },
-                    
-                    
+
+
                 }
             ]
         };
@@ -115,7 +120,7 @@ export class MainPage extends Component {
                                         <div className="slide-text">
                                             <div className="slide-text-wrapper">
                                                 <h2 className="slide-text__title">{slideItems.title.rendered}</h2>
-                                                <span className="slide-text__text" dangerouslySetInnerHTML={{ __html: slideItems.content.rendered }} />
+                                                <span className="slide-text__text" dangerouslySetInnerHTML={{ __html: slideItems.acf.textslide }} />
                                                 <Link className="slide-text__btn" to={slideItems.acf.link}>Подробнее...</Link>
                                             </div>
                                         </div>

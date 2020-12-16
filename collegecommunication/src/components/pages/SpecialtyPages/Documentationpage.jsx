@@ -2,9 +2,9 @@ import React, { Fragment, useEffect, useState,useContext } from 'react'
 import axios from 'axios'
 import '../../../components/global/styles/Covid-19.css'
 import Loading from '../../global/Loading';
-import DropContentDocumentationpage from './SubDocumentationPage/dropDownContent/DropContentDocumentationpage';
-import SubDocumentationpage from './SubDocumentationPage/subDocumentationpage';
 import { Context } from '../../../context'
+import SubDocumentationpage from './SubDocumentationPage/subDocumentationpage';
+
 
 const Documentationpage = () => {
 
