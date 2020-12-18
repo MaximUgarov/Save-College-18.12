@@ -36,7 +36,7 @@ const Navbar = () => {
                             <img className="covidBtn" src={covidBtn} alt="Информация о covid" />
                         </Link>
                         <div className="navbar-partners-block-wrapper">
-                            <img className="pathersBtn" src={PathersBtn} alt="Наши партнеры" onClick={() => setPartnersPopUp(!PartnersPopUp)}/>
+                            <img className="pathersBtn" src={PathersBtn} alt="Наши партнеры" onClick={() => setPartnersPopUp(!PartnersPopUp)} />
                             <div className={PartnersPopUp ? "schedule-block active" : "schedule-block"}>
                                 <a className="schedule-link" href="https://bilet.worldskills.ru">Билет в будущее</a>
                                 <a className="schedule-link" href="https://vk.com/rctt35">РЦТТ35</a>
@@ -46,25 +46,25 @@ const Navbar = () => {
                         <Link to='/books'>
                             <img className="booksBtn" src={booksBtn} alt="Книги" />
                         </Link>
-                        <img className="accountBtn" src={accountBtn} alt="Аккаунт" />
                         <Link to='/blind'>
                             <img className="invalidBtn" src={invalidBtn} alt="Версия дял слабовидящих" />
                         </Link>
                     </div>
                 </div>
                 <menu className="navbar-links-wrapper">
-
-                    <li style={{"list-style-type":"none"}}><Link to="/info" className="navbar__links">Сведения об ОО</Link></li>
-                    <li className="navbar__links" onClick={() => setSchedulePopUp(!SchedulePopUp)} style={{"list-style-type":"none", "display":"flex","flex-wrap":"nowrap","word-wrap":"brake"}}>Раписание <img src={openArrowPopup} alt="стрелка открытия всплывающего окна" style={{"margin-left":"20px"}}/>
-                        <div className={SchedulePopUp ? "schedule-block active" : "schedule-block"}>
-                            <a className="schedule-link" href="http://rasp.kolledgsvyazi.ru/spo.pdf">1 корпус</a>
-                            <a className="schedule-link" href="http://rasp.kolledgsvyazi.ru/npo.pdf">2 корпус</a>
+                    <li style={{ "list-style-type": "none" }}><Link to="/info" className="navbar__links">Сведения об ОО</Link></li>
+                    <li className="navbar__links" onMouseOver={() => setSchedulePopUp(true)} style={{ "list-style-type": "none", "display": "flex", "flex-wrap": "nowrap", "word-wrap": "brake" }}>Раписание <img src={openArrowPopup} alt="стрелка открытия всплывающего окна" style={{ "margin-left": "10px" }} />
+                        <div className={SchedulePopUp ? "schedule-block-bg active" : "schedule-block-bg"} onMouseOut={() => setSchedulePopUp(false)}>
+                            <div className={SchedulePopUp ? "schedule-block active" : "schedule-block"}>
+                                <a className="schedule-link" href="http://rasp.kolledgsvyazi.ru/spo.pdf">1 корпус</a>
+                                <a className="schedule-link" href="http://rasp.kolledgsvyazi.ru/npo.pdf">2 корпус</a>
+                            </div>
                         </div>
                     </li>
-                    <li style={{"list-style-type":"none"}}><Link to="/students" className="navbar__links">Студенту</Link></li>
-                    <li style={{"list-style-type":"none"}}><Link to="/roditeli" className="navbar__links">Родителям</Link></li>
-                    <li style={{"list-style-type":"none"}}><Link to="/abiturient" className="navbar__links">Абитуриенту</Link></li>
-                    <li style={{"list-style-type":"none"}}><a href="http://moodle.kolledgsvyazi.ru:808/" className="navbar__links">Дистанционное обучение</a></li>
+                    <li style={{ "list-style-type": "none" }}><Link to="/students" className="navbar__links">Студенту</Link></li>
+                    <li style={{ "list-style-type": "none" }}><Link to="/roditeli" className="navbar__links">Родителям</Link></li>
+                    <li style={{ "list-style-type": "none" }}><Link to="/abiturient" className="navbar__links">Абитуриенту</Link></li>
+                    <li style={{ "list-style-type": "none" }}><a href="http://moodle.kolledgsvyazi.ru:808/" className="navbar__links">Дистанционное обучение</a></li>
                 </menu>
             </div>
         </Fragment>

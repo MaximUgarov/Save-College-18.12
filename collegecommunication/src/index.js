@@ -14,7 +14,7 @@ const history = createHashHistory()
 
 ReactDOM.render((
   <HashRouter  history={history}>
-       <App/>
+       <App  history={history}/>
      </HashRouter >),
   document.getElementById('root')
 );

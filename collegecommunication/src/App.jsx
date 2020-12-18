@@ -81,6 +81,8 @@ import MethodicalMaterial from './components/pages/CorruptionPage/subPages/Metho
 import CorruptFeedback from './components/pages/CorruptionPage/subPages/CorruptFeedback';
 import InclusivePage from './components/pages/InclusivePage/InclusivePage';
 import MrPage from './components/pages/MrPage/MrPage';
+import ScrollToTop from './scroll';
+
 
 
 
@@ -90,7 +92,7 @@ class App extends Component {
     super();
     this.state = {
       height: window.innerHeight,
-      width: window.innerWidth
+      width: window.innerWidth,
     };
     this.updateDimensions = this.updateDimensions.bind(this);
   }
@@ -105,20 +107,20 @@ class App extends Component {
   }
 
 
-  render() {
-   
 
-      
+ 
+
+  render() {
 
     return (
 
-      <Context.Provider value={{
-        url:"http://192.168.100.37:8000/"}}>
+      <Context.Provider value={{ url: "http://185.236.66.110:3334/" }}>
 
         <div className="App">
           {this.state.width > 1100 ? <SlideBar></SlideBar> : null}
           {this.state.width > 1100 ? <Navbar></Navbar> : null}
           {this.state.width < 1100 ? <MobileNavBlock></MobileNavBlock> : null}
+          <ScrollToTop/>
           <div className="content-container">
             <Switch>
               <Route exact path='/' component={MainPage} />
@@ -217,7 +219,7 @@ class App extends Component {
           {this.state.width > 900 ? <Footer></Footer> : null}
           {this.state.width < 900 ? <MobileFooter></MobileFooter> : null}
         </div>
-        </Context.Provider>
+      </Context.Provider>
     );
   }
 }

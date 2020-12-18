@@ -8,8 +8,8 @@ import { Context } from '../../../../context'
 const InformationPageContactInfo = () => {
 
     const [InformationPageArr, setInformationPageArr] = useState([]);
-    const { url }= useContext(Context)
-    
+    const { url } = useContext(Context)
+
     useEffect(() => {
         axios.get(`${url}/wp-json/wp/v2/information-page-con`)
             .then(res => {
@@ -32,10 +32,10 @@ const InformationPageContactInfo = () => {
                 <div className="content-container-teamplatesPages">
                     <div className="text-block-wrapper">
                         <span className="text-block-contentText" dangerouslySetInnerHTML={{ __html: InformationPageArr.content.rendered }} />
-                        <button className="listofnumbers">Список телефонов</button>
+                        <a className="listofnumbers" href={InformationPageArr.acf.link} target="_blank">Список телефонов</a>
                     </div>
                     <div className="text-block-wrapper">
-                        <a href="https://yandex.ru/maps/org/vologodskiy_kolledzh_svyazi_i_informatsionnykh_tekhnologiy/1769469695/?ll=39.892379%2C59.208341&source=wizbiz_new_text_single&z=18">
+                        <a target="_blank" href="https://yandex.ru/maps/org/vologodskiy_kolledzh_svyazi_i_informatsionnykh_tekhnologiy/1769469695/?ll=39.892379%2C59.208341&source=wizbiz_new_text_single&z=18">
                             <img src={mapImg} alt="Сыллка на карту с местонахождением колледжа" className="map-informationpage" />
                         </a>
                         <div className="transport-block">

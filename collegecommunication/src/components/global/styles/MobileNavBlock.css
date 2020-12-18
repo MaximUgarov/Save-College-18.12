@@ -6,7 +6,7 @@
     justify-content: space-between;
     padding-left: 40px;
     padding-right: 40px;
-    z-index: 999;
+    z-index: 999999;
     position: relative;
     background-color: #fff;
     box-shadow: 5.78947px 5.78947px 28.9474px rgba(0, 0, 0, 0.05);
@@ -48,7 +48,7 @@
     height: 100%;
     top: 0;
     background-color: #fff;
-    z-index: 99;
+    z-index: 99999;
     display: flex;
     flex-direction: column;
     padding-top: 136px;
